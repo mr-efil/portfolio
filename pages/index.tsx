@@ -9,6 +9,11 @@ import Freelance from "@/components/Sections/Experience/Freelance";
 import Engineering from "@/components/Sections/Experience/Engineering";
 import CenterTop from "@/components/kursu/center/CenterTop";
 import CenterBottom from "@/components/kursu/center/CenterBottom";
+import Contact from "@/components/Sections/Social/Contact";
+import Fitness from "@/components/Sections/Other/Fitness";
+import English from "@/components/Sections/Other/English";
+import Publisher from "@/components/Sections/Other/Publisher";
+import Skills from "@/components/Sections/Social/Skills";
 
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
@@ -31,6 +36,16 @@ const Kursu = (props: Props) => {
           return <Freelance />;
         case "engineering":
           return <Engineering />;
+        case "contact":
+          return <Contact />;
+        case "Fitness App":
+          return <Fitness />;
+        case "English Learning App":
+          return <English />;
+        case "Publishing Management App":
+          return <Publisher />;
+        case "skills":
+          return <Skills />;
         default:
           return null;
       }

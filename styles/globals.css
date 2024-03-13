@@ -32,6 +32,10 @@ body {
   }
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .left-lines path {
   stroke-dasharray: 700;
   stroke-dashoffset: -700;

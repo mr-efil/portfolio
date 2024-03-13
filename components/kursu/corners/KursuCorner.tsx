@@ -20,9 +20,9 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
       outer: "startdown",
     },
     {
-      inside: "/logo_deneme.png",
-      center: "/logo_deneme.png",
-      outer: "/logo_deneme.png",
+      inside: "Fitness App",
+      center: "English Learning App",
+      outer: "Publishing Management App",
     },
     {
       inside: "engineering",
@@ -30,9 +30,9 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
       outer: "companies",
     },
     {
-      inside: "/logo_deneme.png",
-      center: "/logo_deneme.png",
-      outer: "/logo_deneme.png",
+      inside: "social media",
+      center: "skills",
+      outer: "contact",
     },
   ];
 
@@ -89,9 +89,9 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
 
   const icons = [
     {
-      inside: "/logo_deneme.png",
-      center: "/logo_deneme.png",
-      outer: "/logo_deneme.png",
+      inside: "Fitness App",
+      center: "English Learning App",
+      outer: "Publishing Management App",
     },
     {
       inside: "/logo_deneme.png",
