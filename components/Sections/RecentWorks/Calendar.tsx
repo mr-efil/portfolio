@@ -4,47 +4,46 @@ import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
 
-const StartDown = (props: Props) => {
+const Calendar = (props: Props) => {
   return (
     <main
       className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 ${inter.className} kursu-ranking-box`}
     >
       <div className="w-3/4 h-full  flex flex-col justify-center items-center gap-2">
         <h1 className="text-center text-4xl italic font-extrabold text-red-700 mb-12">
-          StartDown Social
+          Time Management and Habit Tracker App
         </h1>
         <div className="flex flex-col items-center gap-10 border p-10 bg-gray-800">
           <div className="flex justify-center gap-10 p-2">
             <div className="w-2/5 border-r-2 ">
               <h1 className="mb-5 text-2xl">Categories</h1>
               <div className="flex gap-2 flex-wrap w-full">
-                <p className="border px-4 py-2 w-32 text-center">Next.js</p>
+                <p className="border px-4 py-2 w-32 text-center">
+                  React Native
+                </p>
+                <p className="border px-4 py-2 w-32 text-center">Expo</p>
+                <p className="border px-4 py-2 w-32 text-center">SQLite</p>
+                <p className="border px-4 py-2 w-32 text-center">Redux</p>
                 <p className="border px-4 py-2 w-32 text-center">Django</p>
                 <p className="border px-4 py-2 w-32 text-center">
                   Django Rest Framework
                 </p>
-                <p className="border px-4 py-2 w-32 text-center">Postman</p>
-                <p className="border px-4 py-2 w-32 text-center">PostgreSQL</p>
                 <p className="border px-4 py-2 w-32 text-center">Figma</p>
                 <p className="border px-4 py-2 w-32 text-center">
-                  Redux Toolkit
+                  Apache E-charts
                 </p>
-                <p className="border px-4 py-2 w-32 text-center">Redux Thunk</p>
-                <p className="border px-4 py-2 w-32 text-center">Heroku</p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  Role Based Auth
-                </p>
+                <p className="border px-4 py-2 w-32 text-center">dayjs</p>
+                <p className="border px-4 py-2 w-32 text-center">PostgreSQL</p>
               </div>
             </div>
             <div className="w-3/5 ">
               <p className="text-xl font-light">
-                StartDown is a Course-Based Learning Platform where users are
-                assigned courses based on their experience levels. Each course
-                is tailored to include exercises and challenges designed to
-                enhance learning. Examples of available courses include Learning
-                English, Web Development, App Development, and more. In the
-                platform, there is also form section where users can communicate
-                with each other and share informations with others.
+                Bumerang Calendar is a time management and habit tracker app
+                that it helps the student track their time. Students can set
+                goals, add notes, and track their progress.Also app provides
+                daily, weekly and monthly goals for suggestions. In addition,
+                students can also start any habit and track their progress.
+                Calendar is connected with Bumerang Website.
               </p>
             </div>
           </div>
@@ -54,19 +53,19 @@ const StartDown = (props: Props) => {
           <h1>Single Games</h1>
           <div className="flex justify-center items-center gap-2">
             <Image
-              src="/startdown/dashboard.png"
+              src="/takvim/daily.png"
               alt="kuyu"
               width={200}
               height={200}
             />
             <Image
-              src="/startdown/sidebar.png"
+              src="/takvim/dashboard.png"
               alt="kuyu"
               width={200}
               height={200}
             />
             <Image
-              src="/startdown/transition.png"
+              src="/takvim/kronometre.png"
               alt="kuyu"
               width={200}
               height={200}
@@ -77,19 +76,19 @@ const StartDown = (props: Props) => {
           <h1>Single Games</h1>
           <div className="flex justify-center items-center gap-2">
             <Image
-              src="/startdown/calendar.png"
+              src="/takvim/eventadd.png"
               alt="kuyu"
               width={200}
               height={200}
             />
             <Image
-              src="/startdown/course.png"
+              src="/takvim/tablet.png"
               alt="kuyu"
               width={200}
               height={200}
             />
             <Image
-              src="/startdown/courseana.png"
+              src="/takvim/settings.png"
               alt="kuyu"
               width={200}
               height={200}
@@ -101,4 +100,4 @@ const StartDown = (props: Props) => {
   );
 };
 
-export default StartDown;
+export default Calendar;

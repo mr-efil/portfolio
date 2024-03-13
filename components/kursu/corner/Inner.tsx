@@ -11,7 +11,7 @@ type Props = {
     titleRotate: string;
     text: string;
     textRotate: string;
-}[];
+  }[];
   sections: {
     inside: string;
     center: string;
@@ -33,10 +33,11 @@ const Inner = ({
 }: Props) => {
   return (
     <div
-      className={`kursu-outer-box-${number} hover:${
-        number < 2 ? "left-32" : "right-32"
-      } group/item transition-${
-        number < 2 ? "left" : "right"
+      className={`kursu-outer-box-${number}  ${
+        number < 2 ? "hover:left-32" : "hover:right-32"
+      }
+      } group/item ${
+        number < 2 ? "transition-left" : "transition-right"
       } duration-300 inverse-hover w-[258.5px] absolute flex items-center cursor-pointer ${
         corners[number].box
       } `}

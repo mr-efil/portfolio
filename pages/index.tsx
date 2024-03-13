@@ -14,6 +14,7 @@ import Fitness from "@/components/Sections/Other/Fitness";
 import English from "@/components/Sections/Other/English";
 import Publisher from "@/components/Sections/Other/Publisher";
 import Skills from "@/components/Sections/Social/Skills";
+import Calendar from "@/components/Sections/RecentWorks/Calendar";
 
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
@@ -46,6 +47,8 @@ const Kursu = (props: Props) => {
           return <Publisher />;
         case "skills":
           return <Skills />;
+        case "calendar":
+          return <Calendar />;
         default:
           return null;
       }

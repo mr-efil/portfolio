@@ -15,7 +15,7 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
 
   const sections = [
     {
-      inside: "startdown",
+      inside: "calendar",
       center: "bumerang",
       outer: "startdown",
     },
