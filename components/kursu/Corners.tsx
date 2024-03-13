@@ -5,7 +5,7 @@ type Props = {
   clickedSection: string;
   setClickedSection: Dispatch<SetStateAction<string>>;
 };
-
+ 
 const Corners = ({ clickedSection, setClickedSection }: Props) => {
   return (
     <>

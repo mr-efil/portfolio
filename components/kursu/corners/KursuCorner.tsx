@@ -9,7 +9,7 @@ type Props = {
   clickedSection: string;
   setClickedSection: Dispatch<SetStateAction<string>>;
 };
-
+ 
 const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
   const [clicked, setClicked] = useState(false);
 
