@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
-import KursuCorner from "./corners/KursuCorner";
+import KursuCorner from "./corner/KursuCorner";
 
 type Props = {
   clickedSection: string;

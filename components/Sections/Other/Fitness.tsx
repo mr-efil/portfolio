@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
 
@@ -36,6 +37,29 @@ const Fitness = (props: Props) => {
             </div>
           </div>
           <button className="border px-4 py-2">Go to Project</button>
+        </div>
+        <div>
+          <h1>Single Games</h1>
+          <div className="flex justify-center items-center gap-2">
+            <Image
+              src="/fitness/main.png"
+              alt="kuyu"
+              width={200}
+              height={200}
+            />
+            <Image
+              src="/fitness/diet.png"
+              alt="kuyu"
+              width={200}
+              height={200}
+            />
+            <Image
+              src="/fitness/game.png"
+              alt="kuyu"
+              width={200}
+              height={200}
+            />
+          </div>
         </div>
       </div>
     </main>

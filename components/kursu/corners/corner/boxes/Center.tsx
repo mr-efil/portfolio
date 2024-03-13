@@ -11,6 +11,7 @@ type Props = {
     titleRotate: string;
     text: string;
     textRotate: string;
+    bumerang: string;
 }[];
   sections: {
     inside: string;
@@ -33,13 +34,7 @@ const Center = ({
 }: Props) => {
   return (
     <div
-      className={`kursu-outer-box-${number} ${
-        number < 2 ? "hover:left-32" : "hover:right-32"
-      } group/item transition-${
-        number < 2 ? "left" : "right"
-      } duration-300 inverse-hover w-[258.5px] absolute flex items-center cursor-pointer ${
-        corners[number].box
-      } ${corners[number].translate1}`}
+      className={`kursu-outer-box-${number} ${corners[number].hover} group/item  duration-300 inverse-hover w-[258.5px] absolute flex items-center   ${corners[number].box} ${corners[number].translate1}`}
       onClick={() => {
         setClicked(!clicked);
         setClickedSection(sections[number].center);
@@ -63,7 +58,9 @@ const Center = ({
         height={30}
         className={`absolute right-14 top-2 invert group-hover:opacity-100 opacity-0  ${corners[number].line}`}
       /> */}{" "}
-      <span className={`text-sm text-white font-extrabold italic uppercase absolute right-6 group-hover/item:flex hidden pointer-events-none ${corners[number].textRotate}`}>
+      <span
+        className={`text-sm text-white font-extrabold italic uppercase absolute right-6 group-hover/item:flex hidden pointer-events-none ${corners[number].textRotate}`}
+      >
         {sections[number].center}
       </span>
     </div>

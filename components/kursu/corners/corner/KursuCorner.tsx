@@ -1,21 +1,22 @@
 import Image from "next/image";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
-import Inner from "../corner/Inner";
-import Center from "../corner/Center";
-import Outer from "../corner/Outer";
+import Inner from "./boxes/Inner";
+import Center from "./boxes/Center";
+import Outer from "./boxes/Outer";
+import Bumerang from "./Bumerang";
 
 type Props = {
   number: number;
   clickedSection: string;
   setClickedSection: Dispatch<SetStateAction<string>>;
 };
- 
+
 const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
   const [clicked, setClicked] = useState(false);
 
   const sections = [
     {
-      inside: "startdown",
+      inside: "calendar",
       center: "bumerang",
       outer: "startdown",
     },
@@ -43,11 +44,12 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
       popup: "top-36 left-12",
       translate1: "-translate-x-4 -translate-y-4",
       translate2: "-translate-x-8 -translate-y-8",
-      hover: "translate-x-8",
+      hover: "hover:left-32 transition-left",
       titleRotate:
         "bottom-12 left-16 rotate-90 origin-bottom-left -translate-y-32",
       text: "RECENT WORKS",
       textRotate: "",
+      bumerang: "top-36 left-14",
     },
     {
       line: " -scale-y-100",
@@ -55,11 +57,12 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
       popup: "bottom-36 left-12 -scale-y-100",
       translate1: "-translate-x-4 translate-y-4",
       translate2: "-translate-x-8 translate-y-8",
-      hover: "translate-x-8",
+      hover: "hover:left-32 transition-left",
       titleRotate:
         "top-12 left-16 rotate-90 origin-bottom-left -translate-y-24",
       text: "OTHER WORKS",
       textRotate: " -scale-y-100",
+      bumerang: "top-36 left-14 -scale-y-100",
     },
     {
       line: " -scale-x-100 ",
@@ -67,11 +70,12 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
       popup: "top-36 right-12  -scale-x-100",
       translate1: "translate-x-4 -translate-y-4",
       translate2: "translate-x-8 -translate-y-8",
-      hover: "-translate-x-8",
+      hover: "hover:right-32 transition-right",
       titleRotate:
         "bottom-12 right-16 -rotate-90 origin-bottom-right -translate-y-20",
       text: "EXPERIENCE",
       textRotate: "-scale-x-100",
+      bumerang: "top-36 left-14 -scale-x-100",
     },
     {
       line: "-scale-x-100 -scale-y-100",
@@ -79,11 +83,12 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
       popup: "bottom-36 right-12 -scale-x-100 -scale-y-100",
       translate1: "translate-x-4 translate-y-4",
       translate2: "translate-x-8 translate-y-8",
-      hover: "-translate-x-8",
+      hover: "hover:right-32 transition-right",
       titleRotate:
         "top-12 right-16 -rotate-90 origin-bottom-right -translate-y-24",
       text: "SOCIALS",
       textRotate: "-scale-x-100 -scale-y-100",
+      bumerang: "top-36 left-14 -scale-x-100 -scale-y-100",
     },
   ];
 
@@ -140,6 +145,7 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
             fill="#f7f6f160"
           />
         </svg>
+        <Bumerang position={corners[number].bumerang} number={number} />
       </div>
       <Inner
         clicked={clicked}

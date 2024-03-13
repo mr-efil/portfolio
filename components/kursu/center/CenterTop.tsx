@@ -1,5 +1,5 @@
 import React from "react";
-import KursuCenter from "../KursuCenter";
+import KursuCenter from "./KursuCenter";
 
 type Props = {};
 

@@ -11,7 +11,8 @@ type Props = {
     titleRotate: string;
     text: string;
     textRotate: string;
-  }[];
+    bumerang: string;
+}[];
   sections: {
     inside: string;
     center: string;
@@ -23,7 +24,7 @@ type Props = {
   clicked: boolean;
 };
 
-const Inner = ({
+const Outer = ({
   corners,
   sections,
   number,
@@ -33,16 +34,10 @@ const Inner = ({
 }: Props) => {
   return (
     <div
-      className={`kursu-outer-box-${number} ${
-        number < 2 ? "hover:left-32" : "hover:right-32"
-      } group/item transition-${
-        number < 2 ? "left" : "right"
-      } duration-300 inverse-hover w-[258.5px] absolute flex items-center cursor-pointer ${
-        corners[number].box
-      } `}
+      className={`kursu-outer-box-${number} ${corners[number].hover} group/item  duration-300 inverse-hover w-[258.5px] absolute flex items-center   ${corners[number].box} ${corners[number].translate2}`}
       onClick={() => {
         setClicked(!clicked);
-        setClickedSection(sections[number].inside);
+        setClickedSection(sections[number].outer);
       }}
     >
       <svg
@@ -57,19 +52,19 @@ const Inner = ({
         />
       </svg>
       {/* <Image
-      src={icons[number].inside}
-      alt="logo_deneme"
-      width={30}
-      height={30}
-      className={`absolute right-14 top-2 invert group-hover:opacity-100 opacity-0  ${corners[number].line}`}
-    /> */}
+        src={icons[number].outer}
+        alt="logo_deneme"
+        width={30}
+        height={30}
+        className={`absolute right-14 top-2 invert group-hover:opacity-100 opacity-0  ${corners[number].line}`}
+      /> */}{" "}
       <span
         className={`text-sm text-white font-extrabold italic uppercase absolute right-6 group-hover/item:flex hidden pointer-events-none ${corners[number].textRotate}`}
       >
-        {sections[number].inside}
+        {sections[number].outer}
       </span>
     </div>
   );
 };
 
-export default Inner;
+export default Outer;

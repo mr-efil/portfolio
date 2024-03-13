@@ -24,6 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  cursor: none;
 }
 
 @layer utilities {
@@ -450,4 +451,50 @@ body {
   border-radius: 1.5px;
   transform: translateY(8px) rotate(45deg);
   background-color: #f7f6f1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #cursor {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    will-change: transform;
+    mix-blend-mode: difference;
+    z-index: 999;
+  }
+
+  #cursor--small {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    will-change: transform;
+    mix-blend-mode: difference;
+    z-index: 999;
+  }
+
+  #cursor .cursor--inner {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px #f7f6f1;
+    mix-blend-mode: difference;
+    z-index: 999;
+  }
+  #cursor--small .cursor--inner--small {
+    width: 10px;
+    height: 10px;
+    background-color: #f7f6f1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+}
+
+button{
+  cursor: none;
 }

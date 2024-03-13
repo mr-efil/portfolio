@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import MainSection from "@/components/Sections/MainSection";
 import StartDown from "@/components/Sections/RecentWorks/StartDown";
 import Bumerang from "@/components/Sections/RecentWorks/Bumerang";
-import Corners from "@/components/kursu/Corners";
+import Corners from "@/components/kursu/corners/Corners";
 import Companies from "@/components/Sections/Experience/Companies";
 import Freelance from "@/components/Sections/Experience/Freelance";
 import Engineering from "@/components/Sections/Experience/Engineering";
@@ -14,6 +14,7 @@ import Fitness from "@/components/Sections/Other/Fitness";
 import English from "@/components/Sections/Other/English";
 import Publisher from "@/components/Sections/Other/Publisher";
 import Skills from "@/components/Sections/Social/Skills";
+import Calendar from "@/components/Sections/RecentWorks/Calendar";
 
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
@@ -46,6 +47,8 @@ const Kursu = (props: Props) => {
           return <Publisher />;
         case "skills":
           return <Skills />;
+        case "calendar":
+          return <Calendar />;
         default:
           return null;
       }
