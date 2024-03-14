@@ -10,9 +10,9 @@ import Engineering from "@/components/Sections/Experience/Engineering";
 import CenterTop from "@/components/kursu/center/CenterTop";
 import CenterBottom from "@/components/kursu/center/CenterBottom";
 import Contact from "@/components/Sections/Social/Contact";
-import Fitness from "@/components/Sections/Other/Fitness";
-import English from "@/components/Sections/Other/English";
-import Publisher from "@/components/Sections/Other/Publisher";
+import Fitness from "@/components/Sections/OtherWorks/Fitness";
+import English from "@/components/Sections/OtherWorks/English";
+import Publisher from "@/components/Sections/OtherWorks/Publisher";
 import Skills from "@/components/Sections/Social/Skills";
 import Calendar from "@/components/Sections/RecentWorks/Calendar";
 
@@ -60,10 +60,7 @@ const Kursu = (props: Props) => {
 
   return (
     <div className="kursu-outer-lines min-h-screen flex flex-col w-full relative justify-between items-center bg-[#0d0d0d]">
-      <Corners
-        clickedSection={clickedSection}
-        setClickedSection={setClickedSection}
-      />
+      <Corners />
       <CenterTop />
       {/* <div className="absolute z-50 w-[85%] h-[490px] flex flex-col items-center justify-start top-[240px] kursu-ranking-box  text-[#f7f6f1]">
           <div className="relative flex flex-row w-full h-9 font-bold text-base border-b border-[#f7f6f160] kursu-circle">

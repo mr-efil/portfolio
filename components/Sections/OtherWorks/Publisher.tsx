@@ -14,7 +14,7 @@ const Publisher = () => {
       className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24`}
     >
       <div className="w-3/4 h-full  flex flex-col justify-center items-center gap-2">
-        <ProjectTitle title={"Fitness App"} />
+        <ProjectTitle title={"Publishing Management App"} />
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
             <p>

@@ -10,7 +10,6 @@ type Props = {
 };
 
 const KursuCorner = ({ number }: Props) => {
-
   const sections = [
     {
       inside: "calendar",
@@ -18,9 +17,9 @@ const KursuCorner = ({ number }: Props) => {
       outer: "startdown",
     },
     {
-      inside: "Fitness App",
-      center: "English Learning App",
-      outer: "Publishing Management App",
+      inside: "fitness",
+      center: "english",
+      outer: "publishing",
     },
     {
       inside: "engineering",
@@ -28,7 +27,7 @@ const KursuCorner = ({ number }: Props) => {
       outer: "software",
     },
     {
-      inside: "social media",
+      inside: "socials",
       center: "skills",
       outer: "contact",
     },
@@ -144,21 +143,9 @@ const KursuCorner = ({ number }: Props) => {
         </svg>
         <Bumerang position={corners[number].bumerang} number={number} />
       </div>
-      <Inner
-        corners={corners}
-        number={number}
-        sections={sections}
-      />{" "}
-      <Center
-        corners={corners}
-        number={number}
-        sections={sections}
-      />{" "}
-      <Outer
-        corners={corners}
-        number={number}
-        sections={sections}
-      />
+      <Inner corners={corners} number={number} sections={sections} />{" "}
+      <Center corners={corners} number={number} sections={sections} />{" "}
+      <Outer corners={corners} number={number} sections={sections} />
       {/* <div
         key={"top-popup"}
         className={`absolute z-[99] w-[217px] ${corners[number].popup} ${

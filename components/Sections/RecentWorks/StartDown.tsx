@@ -13,7 +13,9 @@ const StartDown = (props: Props) => {
   const [activeImage, setActiveImage] = React.useState(
     "/startdown/calendar.png"
   );
-  const [activeText, setActiveText] = React.useState(hrefAndTexts.startdown[0].text);
+  const [activeText, setActiveText] = React.useState(
+    hrefAndTexts.startdown[0].text
+  );
   return (
     <main
       className={`flex h-fit lg:h-3/4 w-3/4 items-center justify-center p-24 ${inter.className} kursu-ranking-box`}
