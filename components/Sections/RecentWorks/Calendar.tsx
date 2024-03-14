@@ -1,98 +1,103 @@
 import React from "react";
-import { Inter } from "next/font/google";
 import Image from "next/image";
-const inter = Inter({ subsets: ["latin"] });
-type Props = {};
+import ProjectTitle from "../../Buttons/ProjectTitle";
+import Slider from "@/components/Slider";
+import Labels from "@/components/Labels";
+import { hrefAndTexts } from "@/constants/image_texts";
 
-const Calendar = (props: Props) => {
+const Calendar = () => {
+  const [activeImage, setActiveImage] = React.useState("/takvim/daily.png");
+  const [activeImage2, setActiveImage2] = React.useState(
+    "/takvim/eventadd.png"
+  );
+  const [activeText, setActiveText] = React.useState(
+    hrefAndTexts.calendar1[0].text
+  );
+  const [activeText2, setActiveText2] = React.useState(
+    hrefAndTexts.calendar2[0].text
+  );
+
   return (
     <main
-      className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 ${inter.className} kursu-ranking-box`}
+      className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24  kursu-ranking-box`}
     >
       <div className="w-3/4 h-full  flex flex-col justify-center items-center gap-2">
-        <h1 className="text-center text-4xl italic font-extrabold text-red-700 mb-12">
-          Time Management and Habit Tracker App
-        </h1>
-        <div className="flex flex-col items-center gap-10 border p-10 bg-gray-800">
-          <div className="flex justify-center gap-10 p-2">
-            <div className="w-2/5 border-r-2 ">
-              <h1 className="mb-5 text-2xl">Categories</h1>
-              <div className="flex gap-2 flex-wrap w-full">
-                <p className="border px-4 py-2 w-32 text-center">
-                  React Native
-                </p>
-                <p className="border px-4 py-2 w-32 text-center">Expo</p>
-                <p className="border px-4 py-2 w-32 text-center">SQLite</p>
-                <p className="border px-4 py-2 w-32 text-center">Redux</p>
-                <p className="border px-4 py-2 w-32 text-center">Django</p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  Django Rest Framework
-                </p>
-                <p className="border px-4 py-2 w-32 text-center">Figma</p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  Apache E-charts
-                </p>
-                <p className="border px-4 py-2 w-32 text-center">dayjs</p>
-                <p className="border px-4 py-2 w-32 text-center">PostgreSQL</p>
-              </div>
-            </div>
-            <div className="w-3/5 ">
-              <p className="text-xl font-light">
-                Bumerang Calendar is a time management and habit tracker app
-                that it helps the student track their time. Students can set
-                goals, add notes, and track their progress.Also app provides
-                daily, weekly and monthly goals for suggestions. In addition,
-                students can also start any habit and track their progress.
-                Calendar is connected with Bumerang Website.
-              </p>
-            </div>
+        <ProjectTitle title={"Time Management and Habit Tracker App"} />
+        <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
+          <div className="w-full ">
+            <p>
+              Bumerang Calendar is a time management and habit tracker app that
+              it helps the student track their time. Students can set goals, add
+              notes, and track their progress. Also, the app provides daily,
+              weekly, and monthly goals for suggestions. In addition, students
+              can also start any habit and track their progress. Calendar is
+              connected with the Bumerang Website.
+            </p>
           </div>
-          <button className="border px-4 py-2">Go to Project</button>
+          <Labels
+            labels={[
+              "React Native",
+              "Expo",
+              "SQLite",
+              "Redux",
+              "Django",
+              "Django Rest Framework",
+              "Figma",
+              "Apache E-charts",
+              "dayjs",
+              "PostgreSQL",
+            ]}
+          />
         </div>
-        <div>
-          <h1>Single Games</h1>
+        <Slider activeImage={activeImage} activeText={activeText} />
+
+        <div className="mb-20">
+          <h1 className="text-center text-2xl my-10 italic font-bold">
+            Sample Interfaces
+          </h1>
           <div className="flex justify-center items-center gap-2">
-            <Image
-              src="/takvim/daily.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image
-              src="/takvim/dashboard.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image
-              src="/takvim/kronometre.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
+            {[
+              "/takvim/daily.png",
+              "/takvim/dashboard.png",
+              "/takvim/kronometre.png",
+            ].map((imageSrc, index) => (
+              <Image
+                key={index}
+                src={imageSrc}
+                alt="kuyu"
+                width={200}
+                height={200}
+                onClick={() => {
+                  setActiveImage(imageSrc);
+                  setActiveText(hrefAndTexts.calendar1[index].text);
+                }}
+              />
+            ))}
           </div>
         </div>
-        <div>
-          <h1>Single Games</h1>
+        <Slider activeImage={activeImage2} activeText={activeText2} />
+        <div >
+          <h1 className="text-center text-2xl my-10 italic font-bold">
+            Sample Interfaces
+          </h1>
           <div className="flex justify-center items-center gap-2">
-            <Image
-              src="/takvim/eventadd.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image
-              src="/takvim/tablet.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image
-              src="/takvim/settings.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
+            {[
+              "/takvim/eventadd.png",
+              "/takvim/tablet.png",
+              "/takvim/settings.png",
+            ].map((imageSrc, index) => (
+              <Image
+                key={index}
+                src={imageSrc}
+                alt="kuyu"
+                width={200}
+                height={200}
+                onClick={() => {
+                  setActiveImage2(imageSrc);
+                  setActiveText2(hrefAndTexts.calendar2[index].text);
+                }}
+              />
+            ))}
           </div>
         </div>
       </div>

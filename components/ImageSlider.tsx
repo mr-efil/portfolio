@@ -1,40 +1,23 @@
+import { hrefAndTexts } from "@/constants/image_texts";
 import { Clicker_Script } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+type Props = {
+  type: "startdown" | "bumerang" | "calendar";
+  activeImage: string;
+};
 
-const ImageSlider = (props: Props) => {
+const ImageSlider = ({ type, activeImage }: Props) => {
   return (
     <div>
       <Image
-        src="/startdown/dashboard.png"
+        src={activeImage}
         alt="kuyu"
         width={1000}
         height={1000}
-        className="w-full"
+        className="w-[100%] h-auto object-cover border border-white"
       />
-      <h1>Single Games</h1>
-      <div className="flex justify-between items-center gap-2">
-        <Image
-          src="/startdown/dashboard.png"
-          alt="kuyu"
-          width={200}
-          height={200}
-        />
-        <Image
-          src="/startdown/sidebar.png"
-          alt="kuyu"
-          width={200}
-          height={200}
-        />
-        <Image
-          src="/startdown/transition.png"
-          alt="kuyu"
-          width={200}
-          height={200}
-        />
-      </div>
     </div>
   );
 };

@@ -1,95 +1,174 @@
 import React from "react";
-import { Inter } from "next/font/google";
 import Image from "next/image";
-const inter = Inter({ subsets: ["latin"] });
-type Props = {};
+import ProjectTitle from "../../Buttons/ProjectTitle";
+import GotoProject from "../../Buttons/GotoProject";
+import inter from "next/font/google";
+import Slider from "@/components/Slider";
+import Labels from "@/components/Labels";
+import { hrefAndTexts } from "@/constants/image_texts";
 
-const Bumerang = (props: Props) => {
+const Bumerang = () => {
+  const [activeImage, setActiveImage] = React.useState("/kuyu.png");
+  const [activeImage2, setActiveImage2] = React.useState("/bomba.png");
+  const [activeImage3, setActiveImage3] = React.useState("/oyunentrance.png");
+  const [activeImage4, setActiveImage4] = React.useState("/minideneme.png");
+  const [activeText, setActiveText] = React.useState(hrefAndTexts.bumerang[0].text);
+  const [activeText2, setActiveText2] = React.useState(hrefAndTexts.bumerang2[0].text);
+  const [activeText3, setActiveText3] = React.useState(hrefAndTexts.bumerang3[0].text);
+  const [activeText4, setActiveText4] = React.useState(hrefAndTexts.bumerang4[0].text);
+
   return (
     <main
-      className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 ${inter.className} kursu-ranking-box`}
+      className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 kursu-ranking-box`}
     >
       <div className="w-3/4 h-full  flex flex-col justify-center items-center gap-2">
-        <h1 className="text-center text-4xl italic font-extrabold text-red-700 mb-12">
-          Bumerang
-        </h1>
-        <div className="flex flex-col items-center gap-10 border p-10 bg-gray-800">
-          <div className="flex justify-center gap-10 p-2">
-            <div className="w-2/5 border-r-2 ">
-              <h1 className="mb-5 text-2xl">Categories</h1>
-              <div className="flex gap-2 flex-wrap w-full">
-                <p className="border px-4 py-2 w-32 text-center">Next.js</p>
-                <p className="border px-4 py-2 w-32 text-center">React Query</p>
-                <p className="border px-4 py-2 w-32 text-center">Websocket</p>
-                <p className="border px-4 py-2 w-32 text-center">Serverless</p>
-                <p className="border px-4 py-2 w-32 text-center">AWS S3</p>
-                <p className="border px-4 py-2 w-32 text-center">DynamoDB</p>
-                <p className="border px-4 py-2 w-32 text-center">TypeScript</p>
-                <p className="border px-4 py-2 w-32 text-center">Tailwind</p>
-                <p className="border px-4 py-2 w-32 text-center">Cognito</p>
-                <p className="border px-4 py-2 w-32 text-center">chart-js</p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  canvas drawing
-                </p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  AWS CodePipeline
-                </p>
-              </div>
-            </div>
-            <div className="w-3/5 ">
-              <p className="text-xl font-light">
-                Bumerang is an innovative Learning Management System that
-                seamlessly integrates gamification elements. Designed to enhance
-                students' learning experience, it offers a variety of games
-                tailored to develop specific skills such as time management and
-                quick decision-making. On the platform, students can engage in
-                interactive quizzes covering fundamental sciences, earning
-                points as they progress. A dynamic leaderboard showcases the top
-                achievers, fostering healthy competition and motivation among
-                users. Moreover, students have the option to challenge their
-                peers, adding a social dimension to the learning process.
-                Deployed on the reliable infrastructure of AWS, Bumerang ensures
-                a seamless and reliable experience for all users.
-              </p>
-            </div>
+        <ProjectTitle title={"Bumerang"} />
+        <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
+          <div className="w-full ">
+            <p>
+              Bumerang is an innovative Learning Management System that
+              seamlessly integrates gamification elements. Designed to enhance
+              students' learning experience, it offers a variety of games
+              tailored to develop specific skills such as time management and
+              quick decision-making. On the platform, students can engage in
+              interactive quizzes covering fundamental sciences, earning points
+              as they progress. A dynamic leaderboard showcases the top
+              achievers, fostering healthy competition and motivation among
+              users. Moreover, students have the option to challenge their
+              peers, adding a social dimension to the learning process. Deployed
+              on the reliable infrastructure of AWS, Bumerang ensures a seamless
+              and reliable experience for all users.
+            </p>
           </div>
-          <button className="border px-4 py-2">Go to Project</button>
+          <Labels
+            labels={[
+              "Next.js",
+              "React Query",
+              "Websocket",
+              "Serverless",
+              "AWS S3",
+              "DynamoDB",
+              "TypeScript",
+              "Tailwind",
+              "Cognito",
+              "chart-js",
+              "canvas drawing",
+              "AWS CodePipeline",
+            ]}
+          />
+          <GotoProject href="https://www.bmrng.app/" />
         </div>
-        <div>
-          <h1>Single Games</h1>
-          <div className="flex justify-center items-center gap-2">
-            <Image src="/kuyu.png" alt="kuyu" width={200} height={200} />
-            <Image src="/labirent.png" alt="kuyu" width={200} height={200} />
-            <Image src="/yilan.png" alt="kuyu" width={200} height={200} />
-          </div>
-        </div>
-        <div>
-          <h1>Multiplayer Games</h1>
-          <div className="flex justify-center items-center gap-2">
-            <Image src="/bomba.png" alt="kuyu" width={200} height={200} />
-            <Image src="/fetih.png" alt="kuyu" width={200} height={200} />
-            <Image src="/maraton.png" alt="kuyu" width={200} height={200} />
-          </div>
-        </div>
-        <div>
-          <h1>User Interfaces</h1>
-          <div className="flex justify-center items-center gap-2">
-            <Image
-              src="/oyunentrance.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image src="/sorusolve.png" alt="kuyu" width={200} height={200} />
-            <Image src="/meydan.png" alt="kuyu" width={200} height={200} />
+        <Slider activeImage={activeImage} activeText={activeText} />
+
+        <div className="mb-10">
+          <h1 className="text-center text-2xl my-10 italic font-bold">
+            Single Games
+          </h1>
+          <div className="flex justify-center items-center gap-8">
+            {["/kuyu.png", "/labirent.png", "/yilan.png"].map(
+              (imageSrc, index) => (
+                <Image
+                  key={index}
+                  src={imageSrc}
+                  alt="kuyu"
+                  width={200}
+                  height={200}
+                  onClick={() => {
+                    setActiveImage(imageSrc);
+                    setActiveText(hrefAndTexts.bumerang[index].text);
+                  }}
+                  className={`w-64 h-32 hover:scale-110 ${
+                    activeImage === imageSrc
+                      ? "scale-110 border-4 border-white"
+                      : ""
+                  }`}
+                />
+              )
+            )}
           </div>
         </div>
-        <div>
-          <h1>Progress Charts</h1>
-          <div className="flex justify-center items-center gap-2">
-            <Image src="/minideneme.png" alt="kuyu" width={200} height={200} />
-            <Image src="/progress.png" alt="kuyu" width={200} height={200} />
-            <Image src="/bölge.png" alt="kuyu" width={200} height={200} />
+        <Slider activeImage={activeImage2} activeText={activeText2} />
+        <div className="mb-10">
+          <h1 className="text-center text-2xl my-10 italic font-bold">
+            Multiplayer Games
+          </h1>
+          <div className="flex justify-center items-center gap-8">
+            {["/bomba.png", "/fetih.png", "/maraton.png"].map(
+              (imageSrc, index) => (
+                <Image
+                  key={index}
+                  src={imageSrc}
+                  alt="kuyu"
+                  width={200}
+                  height={200}
+                  onClick={() => {
+                    setActiveImage2(imageSrc);
+                    setActiveText2(hrefAndTexts.bumerang2[index].text);
+                  }}
+                  className={`w-64 h-32 hover:scale-110 ${
+                    activeImage === imageSrc
+                      ? "scale-110 border-4 border-white"
+                      : ""
+                  }`}
+                />
+              )
+            )}
+          </div>
+        </div>
+        <Slider activeImage={activeImage3} activeText={activeText3} />
+        <div className="mb-10">
+          <h1 className="text-center text-2xl my-10 italic font-bold">
+            User Interfaces
+          </h1>
+          <div className="flex justify-center items-center gap-8">
+            {["/oyunentrance.png", "/sorusolve.png", "/meydan.png"].map(
+              (imageSrc, index) => (
+                <Image
+                  key={index}
+                  src={imageSrc}
+                  alt="kuyu"
+                  width={200}
+                  height={200}
+                  onClick={() => {
+                    setActiveImage3(imageSrc);
+                    setActiveText3(hrefAndTexts.bumerang3[index].text);
+                  }}
+                  className={`w-64 h-32 hover:scale-110 ${
+                    activeImage === imageSrc
+                      ? "scale-110 border-4 border-white"
+                      : ""
+                  }`}
+                />
+              )
+            )}
+          </div>
+        </div>
+        <Slider activeImage={activeImage4} activeText={activeText4} />
+        <div className="mb-10">
+          <h1 className="text-center text-2xl my-10 italic font-bold">
+            Progress Charts
+          </h1>
+          <div className="flex justify-center items-center gap-8">
+            {["/minideneme.png", "/progress.png", "/bölge.png"].map(
+              (imageSrc, index) => (
+                <Image
+                  key={index}
+                  src={imageSrc}
+                  alt="kuyu"
+                  width={200}
+                  height={200}
+                  onClick={() => {
+                    setActiveImage4(imageSrc);
+                    setActiveText4(hrefAndTexts.bumerang4[index].text);
+                  }}
+                  className={`w-64 h-32 hover:scale-110 ${
+                    activeImage === imageSrc
+                      ? "scale-110 border-4 border-white"
+                      : ""
+                  }`}
+                />
+              )
+            )}
           </div>
         </div>
       </div>

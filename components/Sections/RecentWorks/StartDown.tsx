@@ -1,16 +1,19 @@
 import React from "react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import Label from "../../Buttons/Label";
 import GotoProject from "../../Buttons/GotoProject";
 import Labels from "../../Labels";
 import ProjectTitle from "../../Buttons/ProjectTitle";
-import ImageSlider from "@/components/ImageSlider";
 import Slider from "@/components/Slider";
+import { hrefAndTexts } from "@/constants/image_texts";
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
 
 const StartDown = (props: Props) => {
+  const [activeImage, setActiveImage] = React.useState(
+    "/startdown/calendar.png"
+  );
+  const [activeText, setActiveText] = React.useState(hrefAndTexts.startdown[0].text);
   return (
     <main
       className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center p-24 ${inter.className} kursu-ranking-box`}
@@ -43,31 +46,37 @@ const StartDown = (props: Props) => {
               "Role Based Auth",
             ]}
           />
-          <GotoProject />
+          <GotoProject href="https://www.xn--sfrdan-p9ab.net/courses" />
         </div>
-        <Slider />
+        <Slider activeImage={activeImage} activeText={activeText} />
 
         <div>
-          <h1>Single Games</h1>
-          <div className="flex justify-between items-center gap-2">
-            <Image
-              src="/startdown/calendar.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image
-              src="/startdown/course.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image
-              src="/startdown/courseana.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
+          <h1 className="text-center text-2xl mb-10 italic font-bold">
+            Sample Interfaces
+          </h1>
+          <div className="flex justify-between items-center gap-8">
+            {[
+              "/startdown/calendar.png",
+              "/startdown/course.png",
+              "/startdown/courseana.png",
+            ].map((imageSrc, index) => (
+              <Image
+                key={index}
+                src={imageSrc}
+                alt="kuyu"
+                width={200}
+                height={200}
+                onClick={() => {
+                  setActiveImage(imageSrc);
+                  setActiveText(hrefAndTexts.startdown[index].text);
+                }}
+                className={`w-64 h-32 hover:scale-110 ${
+                  activeImage === imageSrc
+                    ? "scale-110 border-4 border-gray-500"
+                    : ""
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

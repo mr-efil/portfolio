@@ -28,7 +28,7 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
     {
       inside: "engineering",
       center: "freelance",
-      outer: "companies",
+      outer: "software",
     },
     {
       inside: "social media",

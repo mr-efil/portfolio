@@ -31,7 +31,7 @@ const Kursu = (props: Props) => {
           return <StartDown />;
         case "bumerang":
           return <Bumerang />;
-        case "companies":
+        case "software":
           return <Companies />;
         case "freelance":
           return <Freelance />;

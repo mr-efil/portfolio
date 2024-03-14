@@ -1,81 +1,80 @@
 import React from "react";
-import { Inter } from "next/font/google";
 import Image from "next/image";
-const inter = Inter({ subsets: ["latin"] });
-type Props = {};
+import ProjectTitle from "../../Buttons/ProjectTitle";
+import Labels from "../../Labels";
+import GotoProject from "../../Buttons/GotoProject";
+import { hrefAndTexts } from "@/constants/image_texts";
+import inter from "next/font/google";
+import Slider from "@/components/Slider";
 
-const English = (props: Props) => {
+const English = () => {
+  const [activeImage, setActiveImage] = React.useState(
+    "/english/dashboard.png"
+  );
+  const [activeText, setActiveText] = React.useState(hrefAndTexts.english[0].text);
+
   return (
     <main
-      className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 ${inter.className}`}
+      className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 `}
     >
       <div className="w-3/4 h-full  flex flex-col justify-center items-center gap-2">
-        <h1 className="text-center text-4xl italic font-extrabold text-red-700 mb-12">
-          English Learning App
-        </h1>
-        <div className="flex flex-col items-center gap-10 border p-10 bg-gray-800">
-          <div className="flex justify-center gap-10 p-2">
-            <div className="w-2/5 border-r-2 ">
-              <h1 className="mb-5 text-2xl">Categories</h1>
-              <div className="flex gap-2 flex-wrap w-full">
-                <p className="border px-4 py-2 w-32 text-center">OpenAI API</p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  Elevenlabs API
-                </p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  Midjourney API
-                </p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  Open Source Github
-                </p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  Speech to Text
-                </p>
-                <p className="border px-4 py-2 w-32 text-center">Figma</p>
-                <p className="border px-4 py-2 w-32 text-center">
-                  React Context
-                </p>
-              </div>
-            </div>
-            <div className="w-3/5 ">
-              <p className="text-xl font-light">
-                In this project, we've developed a website aimed at helping
-                English learners improve their skills through practice. The
-                process begins with creating photos depicting various life
-                scenarios using Midjourney. Subsequently, we generate dialogs
-                using the OpenAI API, which are then read aloud by one of the
-                elevenlabs voices. Finally, users' voices are recorded to assess
-                the pronunciation accuracy. One advantage of the platform is
-                that users can practice speaking without fear or shyness, and
-                they can also expose themselves to different accents. Another
-                advantage is that users can prepare for real-life scenarios by
-                practicing on the platform.
-              </p>
-            </div>
+        <ProjectTitle title={"English Learning App"} />
+        <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
+          <div className="w-full ">
+            <p className="text-xl font-normal">
+              In this project, we've developed a website aimed at helping
+              English learners improve their skills through practice. The
+              process begins with creating photos depicting various life
+              scenarios using Midjourney. Subsequently, we generate dialogs
+              using the OpenAI API, which are then read aloud by one of the
+              elevenlabs voices. Finally, users' voices are recorded to assess
+              the pronunciation accuracy. One advantage of the platform is that
+              users can practice speaking without fear or shyness, and they can
+              also expose themselves to different accents. Another advantage is
+              that users can prepare for real-life scenarios by practicing on
+              the platform.
+            </p>
           </div>
-          <button className="border px-4 py-2">Go to Project</button>
+          <Labels
+            labels={[
+              "OpenAI API",
+              "Elevenlabs API",
+              "Midjourney API",
+              "Open Source Github",
+              "Speech to Text",
+              "Figma",
+              "React Context",
+            ]}
+          />
         </div>
+        <Slider activeImage={activeImage} activeText={activeText} />
         <div>
-          <h1>Single Games</h1>
-          <div className="flex justify-center items-center gap-2">
-            <Image
-              src="/english/dashboard.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image
-              src="/english/chat.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
-            <Image
-              src="/english/dialogs.png"
-              alt="kuyu"
-              width={200}
-              height={200}
-            />
+          <h1 className="text-center text-2xl mb-10 italic font-bold">
+            Sample Interfaces
+          </h1>
+          <div className="flex justify-center items-center gap-8">
+            {[
+              "/english/dashboard.png",
+              "/english/chat.png",
+              "/english/dialogs.png",
+            ].map((imageSrc, index) => (
+              <Image
+                key={index}
+                src={imageSrc}
+                alt="kuyu"
+                width={200}
+                height={200}
+                onClick={() => {
+                  setActiveImage(imageSrc);
+                  setActiveText(hrefAndTexts.english[index].text);
+                }}
+                className={`w-64 h-32 hover:scale-110 ${
+                  activeImage === imageSrc
+                    ? "scale-110 border-4 border-gray-500"
+                    : ""
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
