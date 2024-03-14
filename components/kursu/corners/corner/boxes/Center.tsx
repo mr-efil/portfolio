@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { Dispatch, SetStateAction } from "react";
 
 type Props = {
@@ -19,25 +20,19 @@ type Props = {
     outer: string;
   }[];
   number: number;
-  setClicked: Dispatch<SetStateAction<boolean>>;
-  setClickedSection: Dispatch<SetStateAction<string>>;
-  clicked: boolean;
 };
 
 const Center = ({
   corners,
   sections,
   number,
-  setClicked,
-  setClickedSection,
-  clicked,
 }: Props) => {
+  const router = useRouter();
   return (
     <div
       className={`kursu-outer-box-${number} ${corners[number].hover} group/item  duration-300 inverse-hover w-[258.5px] absolute flex items-center   ${corners[number].box} ${corners[number].translate1}`}
       onClick={() => {
-        setClicked(!clicked);
-        setClickedSection(sections[number].center);
+        router.push(sections[number].center);
       }}
     >
       <svg

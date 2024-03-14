@@ -7,12 +7,9 @@ import Bumerang from "./Bumerang";
 
 type Props = {
   number: number;
-  clickedSection: string;
-  setClickedSection: Dispatch<SetStateAction<string>>;
 };
 
-const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
-  const [clicked, setClicked] = useState(false);
+const KursuCorner = ({ number }: Props) => {
 
   const sections = [
     {
@@ -148,28 +145,19 @@ const KursuCorner = ({ number, clickedSection, setClickedSection }: Props) => {
         <Bumerang position={corners[number].bumerang} number={number} />
       </div>
       <Inner
-        clicked={clicked}
         corners={corners}
         number={number}
         sections={sections}
-        setClickedSection={setClickedSection}
-        setClicked={setClicked}
       />{" "}
       <Center
-        clicked={clicked}
         corners={corners}
         number={number}
         sections={sections}
-        setClickedSection={setClickedSection}
-        setClicked={setClicked}
       />{" "}
       <Outer
-        clicked={clicked}
         corners={corners}
         number={number}
         sections={sections}
-        setClickedSection={setClickedSection}
-        setClicked={setClicked}
       />
       {/* <div
         key={"top-popup"}
