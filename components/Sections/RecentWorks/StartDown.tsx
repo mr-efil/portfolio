@@ -13,7 +13,7 @@ type Props = {};
 const StartDown = (props: Props) => {
   return (
     <main
-      className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center p-24 ${inter.className} kursu-ranking-box`}
+      className={`flex h-fit lg:h-3/4 w-3/4 items-center justify-center p-24 ${inter.className} kursu-ranking-box`}
     >
       <div className="w-3/4 h-full  flex flex-col justify-center items-center gap-12">
         <ProjectTitle title={"StartDown Social"} />

@@ -405,10 +405,10 @@ body {
   transform-origin: bottom left;
 }
 
-.kursu-ranking-box {
+/* .kursu-ranking-box {
   animation: animate_kursu_ranking_box 0.5s forwards;
   opacity: 0;
-}
+} */
 
 @keyframes animate_kursu_ranking_box {
   0% {
