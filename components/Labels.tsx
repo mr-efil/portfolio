@@ -11,7 +11,7 @@ const Labels = ({ labels }: Props) => {
     </h1> */}
       <div className="gap-2 w-full flex flex-wrap items-center justify-center">
         {labels.map((label, index) => (
-          <Label key={index} label={label} />
+          <Label key={index} label={label} ind={index} />
         ))}
       </div>
     </div>

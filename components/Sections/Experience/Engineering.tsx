@@ -5,112 +5,50 @@ const inter = Inter({ subsets: ["latin"] });
 type Props = {};
 
 const Engineering = (props: Props) => {
+  const paginatedItems = [
+    {
+      company: "TUSAŞ",
+      duration: "6 Months",
+      task: "Manufacturing and Assemblying",
+    },
+    { company: "ASELSAN", duration: "1 Month", task: "RD Department" },
+    { company: "TUBITAK", duration: "1 Month", task: "Mechanical Design Unit" },
+    {
+      company: "PROSTHETICS and ORTHOTICS",
+      duration: "5 Months",
+      task: "RD, Manufacturing, Assemblying and Testing",
+    },
+  ];
   return (
     <main
       className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 ${inter.className} kursu-ranking-box`}
     >
-      <div className="flex flex-col items-center justify-start h-[2000px]">
-        <ProjectTitle title="Engineering Work History" />
-        <svg
-          width="800"
-          height="400"
-          viewBox="0 0 200 430"
-          xmlns="http://www.w3.org/2000/svg"
-          className="mr-8"
-        >
-          <path
-            d="M100,30 L100,500"
-            stroke="white"
-            stroke-width="2"
-            strokeDasharray={"6 6"}
-          />
-
-          <circle cx="100" cy="60" r="7" stroke="white" />
-
-          <circle cx="100" cy="60" r="3" fill="white" />
-          <text
-            x="130"
-            y="67"
-            font-size="12"
-            fill="white"
-            className="text-2xl font-bold italic"
-          >
-            Tusaş <tspan font-size="text-sm">(2021-2022)</tspan>
-          </text>
-          <text
-            x="130"
-            y="100"
-            font-size="12"
-            fill="white"
-            className="text-lg font-extralight italic"
-          >
-            Manufacturing and Assemblying
-          </text>
-
-          <circle cx="100" cy="150" r="7" stroke="white" />
-          <circle cx="100" cy="150" r="3" fill="white" />
-          <text
-            x="130"
-            y="157"
-            font-size="12"
-            fill="white"
-            className="text-2xl font-bold italic"
-          >
-            Aselsan
-          </text>
-          <text
-            x="130"
-            y="195"
-            font-size="12"
-            fill="white"
-            className="text-lg font-extralight italic"
-          >
-            Mechanical Design Unit
-          </text>
-
-          <circle cx="100" cy="240" r="7" stroke="white" />
-          <circle cx="100" cy="240" r="3" fill="white" />
-          <text
-            x="130"
-            y="250"
-            font-size="12"
-            fill="white"
-            className="text-2xl font-bold italic"
-          >
-            Tübitak
-          </text>
-          <text
-            x="130"
-            y="290"
-            font-size="12"
-            fill="white"
-            className="text-lg font-extralight italic"
-          >
-            RD Department
-          </text>
-
-          <circle cx="100" cy="330" r="7" stroke="white" />
-          <circle cx="100" cy="330" r="3" fill="white" />
-
-          <text
-            x="130"
-            y="340"
-            font-size="12"
-            fill="white"
-            className="text-2xl font-bold italic"
-          >
-            Prosthetics and Orthotics
-          </text>
-          <text
-            x="130"
-            y="380"
-            font-size="12"
-            fill="white"
-            className="text-lg font-extralight italic"
-          >
-            RD, Manufacturing, Assemblying and Testing
-          </text>
-        </svg>
+      <div className="flex flex-col items-center justify-start h-[2000px] w-3/4">
+        <ProjectTitle title="ENGINEERING" />
+        <div className="z-50 w-full mt-12 flex flex-col items-center justify-start  kursu-ranking-box  text-[#f7f6f1]">
+          <div className="relative flex flex-row justify-between w-full h-9 font-bold text-base border-b border-[#f7f6f160] kursu-circle px-12">
+            <span className=" left-[2%] ">COMPANY</span>
+            <span className=" left-[2%] ">TASK</span>
+            <span className=" left-[17%]">DURATION</span>
+          </div>
+          {paginatedItems.map((item, index) => (
+            <div
+              key={index}
+              className="relative flex flex-row w-full h-16 font-light text-base border-b border-[#f7f6f160] items-center justify-between hover:font-bold hover:border-b-0 kursu-underline "
+            >
+              <div className="kursu-circle w-full flex items-center justify-start px-12" />
+              <span className=" absolute left-12 inverse-hover whitespace-nowrap">
+                {item.company}
+              </span>
+              <span className=" absolute left-[calc(42%)] inverse-hover whitespace-nowrap">
+                {item.task}
+              </span>
+              <span className=" absolute right-12 inverse-hover whitespace-nowrap">
+                {item.duration}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );

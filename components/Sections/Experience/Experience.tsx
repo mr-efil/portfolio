@@ -6,8 +6,8 @@ type Props = {};
 
 const Experience = (props: Props) => {
   const paginatedItems = [
-    { company: "STARTDOWN", duration: "2 YEARS" },
-    { company: "FREELANCE", duration: "3 YEARS" },
+    { company: "STARTDOWN", duration: "2 YEARS", task: "Full Stack Developer" },
+    { company: "FREELANCE", duration: "3 YEARS", task: "" },
   ];
   return (
     <main
@@ -18,6 +18,7 @@ const Experience = (props: Props) => {
         <div className="z-50 w-full mt-12 flex flex-col items-center justify-start  kursu-ranking-box  text-[#f7f6f1]">
           <div className="relative flex flex-row justify-between w-full h-9 font-bold text-base border-b border-[#f7f6f160] kursu-circle px-12">
             <span className=" left-[2%] ">COMPANY</span>
+            <span className=" left-[2%] ">TASK</span>
             <span className=" left-[17%]">DURATION</span>
           </div>
           {paginatedItems.map((item, index) => (
@@ -28,6 +29,9 @@ const Experience = (props: Props) => {
               <div className="kursu-circle w-full flex items-center justify-start px-12" />
               <span className=" absolute left-12 inverse-hover whitespace-nowrap">
                 {item.company}
+              </span>
+              <span className=" absolute left-[calc(42%)] inverse-hover whitespace-nowrap">
+                {item.task}
               </span>
               <span className=" absolute right-12 inverse-hover whitespace-nowrap">
                 {item.duration}
