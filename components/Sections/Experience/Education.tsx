@@ -1,17 +1,16 @@
 import React from "react";
 import { Inter } from "next/font/google";
+import ProjectTitle from "@/components/Buttons/ProjectTitle";
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
 
-const Companies = (props: Props) => {
+const Education = (props: Props) => {
   return (
     <main
       className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 ${inter.className} kursu-ranking-box`}
     >
       <div className="flex flex-col items-center justify-start h-[2000px]">
-        <p className="text-white font-bold text-4xl text-center">
-          Software Development
-        </p>
+        <ProjectTitle title="EDUCATION" />
         <svg
           width="800"
           height="400"
@@ -53,4 +52,4 @@ const Companies = (props: Props) => {
   );
 };
 
-export default Companies;
+export default Education;

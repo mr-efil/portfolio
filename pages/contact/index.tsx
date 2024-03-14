@@ -6,7 +6,7 @@ import CenterTop from "@/components/kursu/center/CenterTop";
 import CenterBottom from "@/components/kursu/center/CenterBottom";
 import Engineering from "@/components/Sections/Experience/Engineering";
 import Freelance from "@/components/Sections/Experience/Freelance";
-import Companies from "@/components/Sections/Experience/Companies";
+import Companies from "@/components/Sections/Experience/Experience";
 import Publisher from "@/components/Sections/OtherWorks/Publisher";
 import Contact from "@/components/Sections/Social/Contact";
 

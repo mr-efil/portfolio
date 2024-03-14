@@ -4,7 +4,7 @@ import MainSection from "@/components/Sections/MainSection";
 import StartDown from "@/components/Sections/RecentWorks/StartDown";
 import Bumerang from "@/components/Sections/RecentWorks/Bumerang";
 import Corners from "@/components/kursu/corners/Corners";
-import Companies from "@/components/Sections/Experience/Companies";
+import Companies from "@/components/Sections/Experience/Experience";
 import Freelance from "@/components/Sections/Experience/Freelance";
 import Engineering from "@/components/Sections/Experience/Engineering";
 import CenterTop from "@/components/kursu/center/CenterTop";

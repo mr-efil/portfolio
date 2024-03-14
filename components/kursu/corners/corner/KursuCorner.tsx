@@ -22,9 +22,9 @@ const KursuCorner = ({ number }: Props) => {
       outer: "publishing",
     },
     {
-      inside: "engineering",
-      center: "freelance",
-      outer: "software",
+      inside: "education",
+      center: "engineering",
+      outer: "experience",
     },
     {
       inside: "socials",

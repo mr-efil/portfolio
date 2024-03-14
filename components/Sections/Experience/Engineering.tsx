@@ -1,5 +1,6 @@
 import React from "react";
 import { Inter } from "next/font/google";
+import ProjectTitle from "@/components/Buttons/ProjectTitle";
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
 
@@ -9,9 +10,7 @@ const Engineering = (props: Props) => {
       className={`flex h-screen lg:h-3/4 w-3/4 items-center justify-center gap-48 p-24 ${inter.className} kursu-ranking-box`}
     >
       <div className="flex flex-col items-center justify-start h-[2000px]">
-        <p className="text-white font-bold text-4xl text-center">
-          Engineering Work History
-        </p>
+        <ProjectTitle title="Engineering Work History" />
         <svg
           width="800"
           height="400"

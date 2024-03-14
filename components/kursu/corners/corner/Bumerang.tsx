@@ -19,7 +19,7 @@ const Bumerang = ({ position, number }: Props) => {
       alt="bumerang"
       width={1000}
       height={1000}
-      className={`w-5 absolute top-0 opacity-30 ${position}`}
+      className={`w-5 absolute top-0 opacity-60 ${position}`}
       style={{
         rotate:
           number < 3 && number > 0 && bumerangAngle
