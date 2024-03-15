@@ -166,7 +166,7 @@ const Bumerang = () => {
                       ? "scale-110 border-4 border-white"
                       : ""
                   }`}
-                />
+                /> 
               )
             )}
           </div>

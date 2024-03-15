@@ -16,6 +16,7 @@ const StartDown = (props: Props) => {
   const [activeText, setActiveText] = React.useState(
     hrefAndTexts.startdown[0].text
   );
+
   return (
     <main
       className={`flex h-fit lg:h-3/4 w-3/4 items-center justify-center p-24 ${inter.className} kursu-ranking-box`}
@@ -72,9 +73,9 @@ const StartDown = (props: Props) => {
                   setActiveImage(imageSrc);
                   setActiveText(hrefAndTexts.startdown[index].text);
                 }}
-                className={`w-64 h-32 hover:scale-110 ${
+                className={`w-64 h-32 hover:scale-110 image ${
                   activeImage === imageSrc
-                    ? "scale-110 border-4 border-gray-500"
+                    ? "scale-110 border-4 border-gray-500 "
                     : ""
                 }`}
               />

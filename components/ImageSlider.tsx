@@ -16,7 +16,7 @@ const ImageSlider = ({ type, activeImage }: Props) => {
         alt="kuyu"
         width={1000}
         height={1000}
-        className="w-[100%] h-auto object-cover border border-white"
+        className="w-[100%] h-auto object-cover border border-white images"
       />
     </div>
   );
