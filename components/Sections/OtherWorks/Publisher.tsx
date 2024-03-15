@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ProjectTitle from "../../Buttons/ProjectTitle";
 import Labels from "../../Labels";
 import Slider from "@/components/Slider";
 import { hrefAndTexts } from "@/constants/image_texts";
+import MiniSlider from "@/components/MiniSlider";
 
 const Publisher = () => {
   const [activeImage, setActiveImage] = useState("/atolye/designerprofil.png");
   const [activeText, setActiveText] = useState(hrefAndTexts.publisher[0].text);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = [
+    "/atolye/ogretmenprofil.png",
+    "/atolye/ogretmenupload.png",
+    "/atolye/designerprofil.png",
+    "/atolye/designertake.png",
+  ];
+
+  useEffect(() => {
+    setActiveImage(images[activeIndex]);
+    setActiveText(hrefAndTexts.publisher[activeIndex].text);
+  }, [activeIndex]);
 
   return (
     <main
@@ -44,36 +57,23 @@ const Publisher = () => {
             ]}
           />
         </div>
-        <Slider activeImage={activeImage} activeText={activeText} />
+        <Slider
+          activeImage={activeImage}
+          activeText={activeText}
+          setActiveIndex={setActiveIndex}
+          limit={images.length}
+          activeIndex={activeIndex}
+        />
         <div>
           <h1 className="text-center text-2xl my-10 italic font-bold">
             Sample Interfaces
           </h1>
-          <div className="flex justify-center items-center gap-8">
-            {[
-              "/atolye/ogretmenprofil.png",
-              "/atolye/ogretmenupload.png",
-              "/atolye/designerprofil.png",
-              "/atolye/designertake.png",
-            ].map((imageSrc, index) => (
-              <Image
-                key={index}
-                src={imageSrc}
-                alt="kuyu"
-                width={200}
-                height={200}
-                onClick={() => {
-                  setActiveImage(imageSrc);
-                  setActiveText(hrefAndTexts.publisher[index].text);
-                }}
-                className={`w-64 h-32 hover:scale-110 ${
-                  activeImage === imageSrc
-                    ? "scale-110 border-4 border-gray-500"
-                    : ""
-                }`}
-              />
-            ))}
-          </div>
+          <MiniSlider
+            images={images}
+            activeImage={activeImage}
+            section="publisher"
+            setActiveIndex={setActiveIndex}
+          />
         </div>
       </div>
     </main>

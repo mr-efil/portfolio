@@ -14,6 +14,7 @@ const Skills = (props: Props) => {
     "Next.js",
     "TypeScript",
     "Tailwind",
+    "gsap",
     "Redux Toolkit",
     "React Query",
     "React Context",
@@ -35,7 +36,7 @@ const Skills = (props: Props) => {
     "Cognito",
     "AWS CodePipeline",
     "Docker",
-    "Heroku"
+    "Heroku",
   ];
   return (
     <main

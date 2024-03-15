@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ProjectTitle from "../../Buttons/ProjectTitle";
 import GotoProject from "../../Buttons/GotoProject";
@@ -6,16 +6,34 @@ import inter from "next/font/google";
 import Slider from "@/components/Slider";
 import Labels from "@/components/Labels";
 import { hrefAndTexts } from "@/constants/image_texts";
+import MiniSlider from "@/components/MiniSlider";
 
 const Bumerang = () => {
-  const [activeImage, setActiveImage] = React.useState("/kuyu.png");
-  const [activeImage2, setActiveImage2] = React.useState("/bomba.png");
-  const [activeImage3, setActiveImage3] = React.useState("/oyunentrance.png");
-  const [activeImage4, setActiveImage4] = React.useState("/minideneme.png");
-  const [activeText, setActiveText] = React.useState(hrefAndTexts.bumerang[0].text);
-  const [activeText2, setActiveText2] = React.useState(hrefAndTexts.bumerang2[0].text);
-  const [activeText3, setActiveText3] = React.useState(hrefAndTexts.bumerang3[0].text);
-  const [activeText4, setActiveText4] = React.useState(hrefAndTexts.bumerang4[0].text);
+  const [activeTexts, setActiveTexts] = useState<string[]>([
+    hrefAndTexts.bumerang[0].text,
+    hrefAndTexts.bumerang2[0].text,
+    hrefAndTexts.bumerang3[0].text,
+    hrefAndTexts.bumerang4[0].text,
+  ]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex2, setActiveIndex2] = useState(0);
+  const [activeIndex3, setActiveIndex3] = useState(0);
+  const [activeIndex4, setActiveIndex4] = useState(0);
+  const images = [
+    ["/kuyu.png", "/labirent.png", "/yilan.png"],
+    ["/bomba.png", "/fetih.png", "/maraton.png"],
+    ["/oyunentrance.png", "/sorusolve.png", "/meydan.png"],
+    ["/minideneme.png", "/progress.png", "/bölge.png"],
+  ];
+
+  useEffect(() => {
+    setActiveTexts([
+      hrefAndTexts.bumerang[activeIndex].text,
+      hrefAndTexts.bumerang2[activeIndex2].text,
+      hrefAndTexts.bumerang3[activeIndex3].text,
+      hrefAndTexts.bumerang4[activeIndex4].text,
+    ]);
+  }, [activeIndex, activeIndex2, activeIndex3, activeIndex4]);
 
   return (
     <main
@@ -58,118 +76,80 @@ const Bumerang = () => {
           />
           <GotoProject href="https://www.bmrng.app/" />
         </div>
-        <Slider activeImage={activeImage} activeText={activeText} />
+        <Slider
+          activeImage={images[0][activeIndex]}
+          activeText={activeTexts[0]}
+          limit={3}
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+        />
 
         <div className="mb-10">
           <h1 className="text-center text-2xl my-10 italic font-bold">
             Single Games
           </h1>
           <div className="flex justify-center items-center gap-8">
-            {["/kuyu.png", "/labirent.png", "/yilan.png"].map(
-              (imageSrc, index) => (
-                <Image
-                  key={index}
-                  src={imageSrc}
-                  alt="kuyu"
-                  width={200}
-                  height={200}
-                  onClick={() => {
-                    setActiveImage(imageSrc);
-                    setActiveText(hrefAndTexts.bumerang[index].text);
-                  }}
-                  className={`w-64 h-32 hover:scale-110 ${
-                    activeImage === imageSrc
-                      ? "scale-110 border-4 border-white"
-                      : ""
-                  }`}
-                />
-              )
-            )}
+            <MiniSlider
+              images={images[0]}
+              activeImage={images[0][activeIndex]}
+              setActiveIndex={setActiveIndex}
+              section="bumerang"
+            />
           </div>
         </div>
-        <Slider activeImage={activeImage2} activeText={activeText2} />
+        <Slider
+          activeImage={images[1][activeIndex2]}
+          activeText={activeTexts[1]}
+          limit={3}
+          activeIndex={activeIndex2}
+          setActiveIndex={setActiveIndex2}
+        />
         <div className="mb-10">
           <h1 className="text-center text-2xl my-10 italic font-bold">
             Multiplayer Games
           </h1>
-          <div className="flex justify-center items-center gap-8">
-            {["/bomba.png", "/fetih.png", "/maraton.png"].map(
-              (imageSrc, index) => (
-                <Image
-                  key={index}
-                  src={imageSrc}
-                  alt="kuyu"
-                  width={200}
-                  height={200}
-                  onClick={() => {
-                    setActiveImage2(imageSrc);
-                    setActiveText2(hrefAndTexts.bumerang2[index].text);
-                  }}
-                  className={`w-64 h-32 hover:scale-110 ${
-                    activeImage === imageSrc
-                      ? "scale-110 border-4 border-white"
-                      : ""
-                  }`}
-                />
-              )
-            )}
-          </div>
+          <MiniSlider
+            images={images[1]}
+            activeImage={images[1][activeIndex2]}
+            setActiveIndex={setActiveIndex2}
+            section="bumerang2"
+          />
         </div>
-        <Slider activeImage={activeImage3} activeText={activeText3} />
+        <Slider
+          activeImage={images[2][activeIndex3]}
+          activeText={activeTexts[2]}
+          limit={3}
+          activeIndex={activeIndex3}
+          setActiveIndex={setActiveIndex3}
+        />
         <div className="mb-10">
           <h1 className="text-center text-2xl my-10 italic font-bold">
             User Interfaces
           </h1>
-          <div className="flex justify-center items-center gap-8">
-            {["/oyunentrance.png", "/sorusolve.png", "/meydan.png"].map(
-              (imageSrc, index) => (
-                <Image
-                  key={index}
-                  src={imageSrc}
-                  alt="kuyu"
-                  width={200}
-                  height={200}
-                  onClick={() => {
-                    setActiveImage3(imageSrc);
-                    setActiveText3(hrefAndTexts.bumerang3[index].text);
-                  }}
-                  className={`w-64 h-32 hover:scale-110 ${
-                    activeImage === imageSrc
-                      ? "scale-110 border-4 border-white"
-                      : ""
-                  }`}
-                />
-              )
-            )}
-          </div>
+          <MiniSlider
+            images={images[2]}
+            activeImage={images[2][activeIndex3]}
+            setActiveIndex={setActiveIndex3}
+            section="bumerang3"
+          />
         </div>
-        <Slider activeImage={activeImage4} activeText={activeText4} />
+        <Slider
+          activeImage={images[3][activeIndex4]}
+          activeText={activeTexts[3]}
+          limit={3}
+          activeIndex={activeIndex4}
+          setActiveIndex={setActiveIndex4}
+        />
         <div className="mb-10">
           <h1 className="text-center text-2xl my-10 italic font-bold">
             Progress Charts
           </h1>
-          <div className="flex justify-center items-center gap-8">
-            {["/minideneme.png", "/progress.png", "/bölge.png"].map(
-              (imageSrc, index) => (
-                <Image
-                  key={index}
-                  src={imageSrc}
-                  alt="kuyu"
-                  width={200}
-                  height={200}
-                  onClick={() => {
-                    setActiveImage4(imageSrc);
-                    setActiveText4(hrefAndTexts.bumerang4[index].text);
-                  }}
-                  className={`w-64 h-32 hover:scale-110 ${
-                    activeImage === imageSrc
-                      ? "scale-110 border-4 border-white"
-                      : ""
-                  }`}
-                /> 
-              )
-            )}
-          </div>
+          <MiniSlider
+            images={images[3]}
+            activeImage={images[3][activeIndex4]}
+            setActiveIndex={setActiveIndex4}
+            section="bumerang4"
+          />
         </div>
       </div>
     </main>

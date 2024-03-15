@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ProjectTitle from "../../Buttons/ProjectTitle";
 import Slider from "@/components/Slider";
 import Labels from "@/components/Labels";
 import { hrefAndTexts } from "@/constants/image_texts";
+import MiniSlider from "@/components/MiniSlider";
 
 const Calendar = () => {
   const [activeImage, setActiveImage] = React.useState("/takvim/daily.png");
@@ -16,6 +17,18 @@ const Calendar = () => {
   const [activeText2, setActiveText2] = React.useState(
     hrefAndTexts.calendar2[0].text
   );
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = [
+    ["/takvim/daily.png", "/takvim/dashboard.png", "/takvim/kronometre.png"],
+    ["/takvim/eventadd.png", "/takvim/tablet.png", "/takvim/settings.png"],
+  ];
+
+  useEffect(() => {
+    setActiveImage(images[0][activeIndex]);
+    setActiveImage2(images[1][activeIndex]);
+    setActiveText(hrefAndTexts.calendar1[activeIndex].text);
+    setActiveText2(hrefAndTexts.calendar2[activeIndex].text);
+  }, [activeIndex]);
 
   return (
     <main
@@ -49,56 +62,41 @@ const Calendar = () => {
             ]}
           />
         </div>
-        <Slider activeImage={activeImage} activeText={activeText} />
-
+        <Slider
+          activeImage={activeImage}
+          activeText={activeText}
+          limit={3}
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+        />
         <div className="mb-20">
           <h1 className="text-center text-2xl my-10 italic font-bold">
             Sample Interfaces
           </h1>
-          <div className="flex justify-center items-center gap-2">
-            {[
-              "/takvim/daily.png",
-              "/takvim/dashboard.png",
-              "/takvim/kronometre.png",
-            ].map((imageSrc, index) => (
-              <Image
-                key={index}
-                src={imageSrc}
-                alt="kuyu"
-                width={200}
-                height={200}
-                onClick={() => {
-                  setActiveImage(imageSrc);
-                  setActiveText(hrefAndTexts.calendar1[index].text);
-                }}
-              />
-            ))}
-          </div>
+          <MiniSlider
+            images={images[0]}
+            activeImage={activeImage}
+            setActiveIndex={setActiveIndex}
+            section="calendar1"
+          />
         </div>
-        <Slider activeImage={activeImage2} activeText={activeText2} />
-        <div >
+        <Slider
+          activeImage={activeImage2}
+          activeText={activeText2}
+          limit={3}
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+        />
+        <div>
           <h1 className="text-center text-2xl my-10 italic font-bold">
             Sample Interfaces
           </h1>
-          <div className="flex justify-center items-center gap-2">
-            {[
-              "/takvim/eventadd.png",
-              "/takvim/tablet.png",
-              "/takvim/settings.png",
-            ].map((imageSrc, index) => (
-              <Image
-                key={index}
-                src={imageSrc}
-                alt="kuyu"
-                width={200}
-                height={200}
-                onClick={() => {
-                  setActiveImage2(imageSrc);
-                  setActiveText2(hrefAndTexts.calendar2[index].text);
-                }}
-              />
-            ))}
-          </div>
+          <MiniSlider
+            images={images[1]}
+            activeImage={activeImage2}
+            section="calendar2"
+            setActiveIndex={setActiveIndex}
+          />
         </div>{" "}
       </div>
     </main>

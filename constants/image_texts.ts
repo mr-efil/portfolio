@@ -3,7 +3,7 @@ interface Link {
   text: string;
 }
 
-interface HrefAndTexts {
+export interface HrefAndTexts {
   startdown: Link[];
   bumerang: Link[];
   bumerang2: Link[];
