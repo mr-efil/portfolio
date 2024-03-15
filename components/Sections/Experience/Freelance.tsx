@@ -1,5 +1,4 @@
 import React from "react";
-import FastTravelButtons from "../Hero/FastTravelButtons";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};

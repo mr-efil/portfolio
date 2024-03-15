@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useImageCenterPosition = (imgRef) => {
+const useImageCenterPosition = (imgRef: React.RefObject<HTMLImageElement>) => {
   const [centerPosition, setCenterPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {

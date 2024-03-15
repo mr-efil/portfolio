@@ -1,4 +1,3 @@
-import CustomCursor from "@/components/Cursor/CustomCursor";
 import CustomCursor2 from "@/components/Cursor/CustomCursor2";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
