@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ProjectTitle from "../../Buttons/ProjectTitle";
 import Labels from "../../Labels";
@@ -6,12 +6,26 @@ import GotoProject from "../../Buttons/GotoProject";
 import { hrefAndTexts } from "@/constants/image_texts";
 import inter from "next/font/google";
 import Slider from "@/components/Slider";
+import MiniSlider from "@/components/MiniSlider";
 
 const English = () => {
   const [activeImage, setActiveImage] = React.useState(
     "/english/dashboard.png"
   );
-  const [activeText, setActiveText] = React.useState(hrefAndTexts.english[0].text);
+  const [activeText, setActiveText] = React.useState(
+    hrefAndTexts.english[0].text
+  );
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = [
+    "/english/dashboard.png",
+    "/english/chat.png",
+    "/english/dialogs.png",
+  ];
+
+  useEffect(() => {
+    setActiveImage(images[activeIndex]);
+    setActiveText(hrefAndTexts.english[activeIndex].text);
+  }, [activeIndex]);
 
   return (
     <main
@@ -47,35 +61,23 @@ const English = () => {
             ]}
           />
         </div>
-        <Slider activeImage={activeImage} activeText={activeText} />
+        <Slider
+          activeImage={activeImage}
+          activeText={activeText}
+          setActiveIndex={setActiveIndex}
+          limit={images.length}
+          activeIndex={activeIndex}
+        />
         <div>
           <h1 className="text-center text-2xl mb-10 italic font-bold">
             Sample Interfaces
           </h1>
-          <div className="flex justify-center items-center gap-8">
-            {[
-              "/english/dashboard.png",
-              "/english/chat.png",
-              "/english/dialogs.png",
-            ].map((imageSrc, index) => (
-              <Image
-                key={index}
-                src={imageSrc}
-                alt="kuyu"
-                width={200}
-                height={200}
-                onClick={() => {
-                  setActiveImage(imageSrc);
-                  setActiveText(hrefAndTexts.english[index].text);
-                }}
-                className={`w-64 h-32 hover:scale-110 ${
-                  activeImage === imageSrc
-                    ? "scale-110 border-4 border-gray-500"
-                    : ""
-                }`}
-              />
-            ))}
-          </div>
+          <MiniSlider
+            images={images}
+            activeImage={activeImage}
+            setActiveIndex={setActiveIndex}
+            section="english"
+          />
         </div>
       </div>
     </main>

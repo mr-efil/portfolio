@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ProjectTitle from "../../Buttons/ProjectTitle";
 import Labels from "../../Labels";
@@ -6,10 +6,22 @@ import GotoProject from "../../Buttons/GotoProject";
 import Slider from "@/components/Slider";
 import inter from "next/font/google";
 import { hrefAndTexts } from "@/constants/image_texts";
+import MiniSlider from "@/components/MiniSlider";
 
 const Fitness = () => {
   const [activeImage, setActiveImage] = useState("/fitness/main.png");
   const [activeText, setActiveText] = useState(hrefAndTexts.fitness[0].text);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = [
+    "/fitness/main.png",
+    "/fitness/diet.png",
+    "/fitness/game.png",
+  ];
+
+  useEffect(() => {
+    setActiveImage(images[activeIndex]);
+    setActiveText(hrefAndTexts.fitness[activeIndex].text);
+  }, [activeIndex]);
 
   return (
     <main
@@ -38,35 +50,23 @@ const Fitness = () => {
           />
           <GotoProject href="https://muscle-workout.vercel.app/" />
         </div>
-        <Slider activeImage={activeImage} activeText={activeText} />
+        <Slider
+          activeImage={activeImage}
+          activeText={activeText}
+          setActiveIndex={setActiveIndex}
+          limit={images.length}
+          activeIndex={activeIndex}
+        />
         <div>
-        <h1 className="text-center text-2xl mb-10 italic font-bold">
+          <h1 className="text-center text-2xl mb-10 italic font-bold">
             Sample Interfaces
           </h1>
-          <div className="flex justify-center items-center gap-2">
-            {[
-              "/fitness/main.png",
-              "/fitness/diet.png",
-              "/fitness/game.png",
-            ].map((imageSrc, index) => (
-              <Image
-                key={index}
-                src={imageSrc}
-                alt="kuyu"
-                width={200}
-                height={200}
-                onClick={() => {
-                  setActiveImage(imageSrc);
-                  setActiveText(hrefAndTexts.fitness[index].text);
-                }}
-                className={`w-64 h-32 hover:scale-110 ${
-                  activeImage === imageSrc
-                    ? "scale-110 border-4 border-gray-500"
-                    : ""
-                }`}
-              />
-            ))}
-          </div>
+          <MiniSlider
+            images={images}
+            activeImage={activeImage}
+            setActiveIndex={setActiveIndex}
+            section="fitness"
+          />
         </div>
       </div>
     </main>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import GotoProject from "../../Buttons/GotoProject";
@@ -6,6 +6,7 @@ import Labels from "../../Labels";
 import ProjectTitle from "../../Buttons/ProjectTitle";
 import Slider from "@/components/Slider";
 import { hrefAndTexts } from "@/constants/image_texts";
+import MiniSlider from "@/components/MiniSlider";
 const inter = Inter({ subsets: ["latin"] });
 type Props = {};
 
@@ -16,6 +17,17 @@ const StartDown = (props: Props) => {
   const [activeText, setActiveText] = React.useState(
     hrefAndTexts.startdown[0].text
   );
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = [
+    "/startdown/calendar.png",
+    "/startdown/course.png",
+    "/startdown/courseana.png",
+  ];
+
+  useEffect(() => {
+    setActiveImage(images[activeIndex]);
+    setActiveText(hrefAndTexts.startdown[activeIndex].text);
+  }, [activeIndex]);
 
   return (
     <main
@@ -51,36 +63,24 @@ const StartDown = (props: Props) => {
           />
           <GotoProject href="https://www.xn--sfrdan-p9ab.net/courses" />
         </div>
-        <Slider activeImage={activeImage} activeText={activeText} />
+        <Slider
+          activeImage={activeImage}
+          activeText={activeText}
+          limit={images.length}
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+        />
 
         <div>
           <h1 className="text-center text-2xl mb-10 italic font-bold">
             Sample Interfaces
           </h1>
-          <div className="flex justify-between items-center gap-8">
-            {[
-              "/startdown/calendar.png",
-              "/startdown/course.png",
-              "/startdown/courseana.png",
-            ].map((imageSrc, index) => (
-              <Image
-                key={index}
-                src={imageSrc}
-                alt="kuyu"
-                width={200}
-                height={200}
-                onClick={() => {
-                  setActiveImage(imageSrc);
-                  setActiveText(hrefAndTexts.startdown[index].text);
-                }}
-                className={`w-64 h-32 hover:scale-110 image ${
-                  activeImage === imageSrc
-                    ? "scale-110 border-4 border-gray-500 "
-                    : ""
-                }`}
-              />
-            ))}
-          </div>
+          <MiniSlider
+            images={images}
+            activeImage={activeImage}
+            setActiveIndex={setActiveIndex}
+            section="startdown"
+          />
         </div>
       </div>
     </main>
