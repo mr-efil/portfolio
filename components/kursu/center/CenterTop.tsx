@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import KursuCenter from "./KursuCenter";
 
 type Props = {};
 
 const CenterTop = (props: Props) => {
+  const subject = "EFİLOĞLU";
+  const [topBoxClicked, setTopBoxClicked] = useState(false);
+
+  function handletopboxclick() {
+    setTopBoxClicked((prev) => !prev);
+  }
   return (
     <div
       key={"ders"}
@@ -18,20 +24,18 @@ const CenterTop = (props: Props) => {
       >
         <div className="flex flex-col justify-center items-center text-center absolute bottom-0 mb-5 ">
           <span className="font-bold text-base text-[#f7f6f1] opacity-60">
-            DERS
+            SURNAME
           </span>
           <div className="h-1 w-20 bg-[#f7f6f160] rounded-b mb-3 mt-1  relative group-hover:w-24 duration-300" />
-          <span className="font-bold text-3xl text-[#f7f6f1]">
-            {subject}
-          </span>
+          <span className="font-bold text-3xl text-[#f7f6f1]">{subject}</span>
         </div>
         <svg
           viewBox="0 0 267 113"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="overflow-visible opacity-30"
         >
           <path
-            opacity="0.6"
             d="M266.5 56.5V93C266.5 103.77 257.77 112.5 247 112.5H20C9.23044 112.5 0.5 103.77 0.5 93V56.5V53.3681C0.5 46.6935 3.91386 40.4826 9.54889 36.9053L62.1111 3.53719C65.2359 1.55343 68.8608 0.5 72.5622 0.5H100.125H133.5H194.438C198.139 0.5 201.764 1.55343 204.889 3.53719L257.451 36.9053C263.086 40.4826 266.5 46.6935 266.5 53.3681V56.5Z"
             stroke="#f7f6f1"
           />
@@ -40,7 +44,7 @@ const CenterTop = (props: Props) => {
       <div
         key={"top-popup"}
         className={`absolute z-[99] w-[267px] top-28 left-0 right-0 mx-auto ${
-          topBoxClicked ? "flex" : "hidden"
+          topBoxClicked ? "hidden" : "hidden"
         } justify-center `}
       >
         <svg

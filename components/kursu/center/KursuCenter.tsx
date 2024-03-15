@@ -1,8 +1,8 @@
 import React from "react";
 
-type Props = {};
+type Props = { number: number };
 
-const KursuCenter = ({ number }) => {
+const KursuCenter = ({ number }: Props) => {
   const corners = [
     {
       line: "-scale-x-100",
@@ -19,9 +19,7 @@ const KursuCenter = ({ number }) => {
   ];
 
   return (
-    <div
-      className={`kursu-center-lines w-[306.09px]  ${corners[number].line}`}
-    >
+    <div className={`kursu-center-lines w-[306.09px]  ${corners[number].line}`}>
       <svg viewBox="0 0 307 143" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           opacity="0.3"

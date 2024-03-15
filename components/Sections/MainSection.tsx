@@ -15,11 +15,6 @@ const MainSection = (props: Props) => {
           I am a Front-end Developer
         </p>
       </div>
-      <div className="flex flex-col items-start justify-start gap-2">
-        <FastTravelButtons text="JOB HISTORY" />
-        <FastTravelButtons text="RECENT WORKS" />
-        <FastTravelButtons text="CONTACT ME" />
-      </div>
     </main>
   );
 };

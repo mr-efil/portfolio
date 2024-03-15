@@ -45,12 +45,16 @@ const CustomCursor2 = (props: Props) => {
     gsap.to(outerCursor, { width: 44, height: 44 }); // refresh problem solver
 
     const handleMouseOver = (e: MouseEvent) => {
+      //   setIsOnImage(false);
+      //   setIsOnSmallImage(false);
       gsap.to(innerCursor, { width: 60, height: 60 });
       gsap.to(outerCursor, { width: 10, height: 10 });
     };
 
     // Function to handle hover-out event
     const handleMouseOut = () => {
+      //   setIsOnImage(false);
+      //   setIsOnSmallImage(false);
       gsap.to(innerCursor, { width: 4, height: 4 });
       gsap.to(outerCursor, { width: 44, height: 44 });
     };
@@ -61,12 +65,14 @@ const CustomCursor2 = (props: Props) => {
         width: 100,
         height: 100,
       });
+      gsap.to(outerCursor, { width: 90, height: 90 });
     };
 
     // Function to handle hover-out event
     const handleMouseOutImage = () => {
       setIsOnImage(false);
       gsap.to(innerCursor, { width: 4, height: 4 });
+      gsap.to(outerCursor, { width: 44, height: 44 });
     };
 
     const handleMouseOverImageSmall = (e: MouseEvent) => {
@@ -75,12 +81,14 @@ const CustomCursor2 = (props: Props) => {
         width: 100,
         height: 100,
       });
+      gsap.to(outerCursor, { width: 90, height: 90 });
     };
 
     // Function to handle hover-out event
     const handleMouseOutImageSmall = () => {
       setIsOnSmallImage(false);
       gsap.to(innerCursor, { width: 4, height: 4 });
+      gsap.to(outerCursor, { width: 44, height: 44 });
     };
 
     for (const element of elements) {
@@ -93,10 +101,7 @@ const CustomCursor2 = (props: Props) => {
         "mouseover",
         handleMouseOverImage as EventListener
       );
-      image.addEventListener(
-        "mouseout",
-        handleMouseOutImageSmall as EventListener
-      );
+      image.addEventListener("mouseout", handleMouseOutImage as EventListener);
     }
 
     for (const image of smallImages) {
@@ -145,6 +150,8 @@ const CustomCursor2 = (props: Props) => {
           handleMouseOutImageSmall as EventListener
         );
       }
+      setIsOnImage(false);
+      setIsOnSmallImage(false);
     };
   }, [router]);
 
@@ -177,7 +184,7 @@ const CustomCursor2 = (props: Props) => {
                 alt="glass"
                 width={300}
                 height={300}
-                className="w-6 h-auto object-cover"
+                className="w-12 h-auto object-cover"
               />
             )
           )}
