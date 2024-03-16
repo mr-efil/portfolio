@@ -38,7 +38,7 @@ const Calendar = () => {
         <ProjectTitle title={"Time Management and Habit Tracker App"} />
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
-            <p>
+            <p className="font-light text-lg">
               Bumerang Calendar is a time management and habit tracker app that
               it helps the student track their time. Students can set goals, add
               notes, and track their progress. Also, the app provides daily,

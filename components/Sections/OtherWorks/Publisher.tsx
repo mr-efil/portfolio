@@ -30,7 +30,7 @@ const Publisher = () => {
         <ProjectTitle title={"Publishing Management App"} />
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
-            <p>
+            <p className="font-light text-lg">
               In this project, we've created a mobile app designed for managing
               a database system. The app caters to three distinct user roles:
               Admins, Editors, and Teachers.

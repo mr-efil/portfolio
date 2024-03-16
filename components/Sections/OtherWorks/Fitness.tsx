@@ -31,7 +31,7 @@ const Fitness = () => {
         <ProjectTitle title={"Fitness App"} />
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
-            <p className="text-xl font-normal">
+            <p className="font-light text-lg">
               In this project, we've developed a website featuring a 3D model of
               the human body to illustrate muscle groups and corresponding
               exercises for targeted development. Additionally, tailored dietary
@@ -48,7 +48,10 @@ const Fitness = () => {
               "Gaming",
             ]}
           />
-          <GotoProject href="https://muscle-workout.vercel.app/" />
+          <GotoProject
+            href="https://muscle-workout.vercel.app/"
+            title={"Fitness App"}
+          />
         </div>
         <Slider
           activeImage={activeImage}

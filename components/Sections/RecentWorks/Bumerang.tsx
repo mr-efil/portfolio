@@ -43,7 +43,7 @@ const Bumerang = () => {
         <ProjectTitle title={"Bumerang"} />
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
-            <p>
+            <p className="font-light text-lg">
               Bumerang is an innovative Learning Management System that
               seamlessly integrates gamification elements. Designed to enhance
               students' learning experience, it offers a variety of games
@@ -74,7 +74,7 @@ const Bumerang = () => {
               "AWS CodePipeline",
             ]}
           />
-          <GotoProject href="https://www.bmrng.app/" />
+          <GotoProject href="https://www.bmrng.app/" title={"Bumerang"} />
         </div>
         <Slider
           activeImage={images[0][activeIndex]}

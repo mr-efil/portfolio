@@ -1,9 +1,11 @@
 import React from "react";
 import KursuCenter from "./KursuCenter";
+import { useRouter } from "next/router";
 
 type Props = {};
 
 const CenterBottom = (props: Props) => {
+  const router = useRouter();
   return (
     <div
       key={"sehir"}
@@ -98,7 +100,17 @@ const CenterBottom = (props: Props) => {
           onClick={() => scrollContent(-220)}
         />
       </div> */}
-      <div className="w-10 h-1 bg-[#f7f6f160] rounded-t top-12 relative mx-10 lg:flex hidden" />
+      <div className="w-10 h-1 bg-[#f7f6f160] rounded-t top-12 relative mx-10 lg:flex hidden" />{" "}
+      {router.asPath !== "/" && (
+        <div
+          className="absolute left-0 right-0 mx-auto top-20 px-5 py-3 w-fit rounded-xl border border-white border-opacity-30 hover:bg-white bg-opacity-30 flex items-center justify-center group"
+          onClick={() => router.push("/")}
+        >
+          <span className="font-light text-sm text-white uppercase opacity-60 group-hover:text-black group-hover:opacity-100">
+            dashboard
+          </span>
+        </div>
+      )}
       <KursuCenter number={3} />
     </div>
   );

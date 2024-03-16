@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import KursuCenter from "./KursuCenter";
+import { useRouter } from "next/router";
 
 type Props = {};
 
@@ -10,6 +11,7 @@ const CenterTop = (props: Props) => {
   function handletopboxclick() {
     setTopBoxClicked((prev) => !prev);
   }
+
   return (
     <div
       key={"ders"}
@@ -75,7 +77,8 @@ const CenterTop = (props: Props) => {
           ))}
         </div>
       </div> */}
-      <div className="w-10 h-1 bg-[#f7f6f160] rounded-b bottom-12 relative mx-10" />
+      <div className="w-10 h-1 bg-[#f7f6f160] rounded-b bottom-12 relative mx-10"></div>
+
       <KursuCenter number={1} />
     </div>
   );

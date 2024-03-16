@@ -26,7 +26,7 @@ export default function MiniSlider({
           onClick={() => {
             setActiveIndex(index);
           }}
-          className={`w-44 h-auto hover:scale-110 ${
+          className={`w-44 h-auto hover:scale-110 image ${
             activeImage === imageSrc ? "scale-110 border-4 border-white" : ""
           }`}
         />

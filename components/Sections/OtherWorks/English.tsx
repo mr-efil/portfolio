@@ -35,7 +35,7 @@ const English = () => {
         <ProjectTitle title={"English Learning App"} />
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
-            <p className="text-xl font-normal">
+            <p className="font-light text-lg">
               In this project, we've developed a website aimed at helping
               English learners improve their skills through practice. The
               process begins with creating photos depicting various life

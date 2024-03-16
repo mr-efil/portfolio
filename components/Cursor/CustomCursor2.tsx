@@ -170,13 +170,22 @@ const CustomCursor2 = (props: Props) => {
           }}
         >
           {isOnImage ? (
-            <Image
-              src={"/bumerang-white-right-empty.png"}
-              alt="arrow"
-              width={300}
-              height={300}
-              className="w-6 h-auto object-cover invert"
-            />
+            <>
+              <Image
+                src={"/bumerang-white-right-empty.png"}
+                alt="arrow"
+                width={300}
+                height={300}
+                className="w-3 h-auto object-cover invert toggle"
+              />
+              <Image
+                src={"/bumerang-white-right-empty.png"}
+                alt="arrow"
+                width={300}
+                height={300}
+                className="w-6 h-auto object-cover invert"
+              />
+            </>
           ) : (
             isOnSmallImage && (
               <Image
@@ -188,6 +197,18 @@ const CustomCursor2 = (props: Props) => {
               />
             )
           )}
+          <div
+            id="routeText"
+            className="hidden z-[1000] items-end justify-center gap-6"
+          >
+            <span
+              id="routeInnerHTML"
+              className="text-black italic font-extrabold text-4xl uppercase"
+            >
+              LOADING
+            </span>
+            <div className="dot-pulse mb-1"></div>
+          </div>
         </div>
       </div>
       <div
