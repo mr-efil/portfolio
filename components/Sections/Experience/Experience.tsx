@@ -6,7 +6,7 @@ type Props = {};
 
 const Experience = (props: Props) => {
   const paginatedItems = [
-    { company: "STARTDOWN", duration: "2 YEARS", task: "Full Stack Developer" },
+    { company: "STARTDOWN", duration: "2 YEARS", task: "Front End Developer" },
     { company: "FREELANCE", duration: "3 YEARS", task: "" },
   ];
   return (

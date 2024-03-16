@@ -85,15 +85,15 @@ const NewHeroTitle: React.FC = () => {
         style={{ fontFamily: "Montserrat ; sans-serif" }}
       >
         <span className="text-2xl lg:text-3xl font-extrabold text-[#787878]">
-          {/* {"ALPEREN EFİLOĞLU"} */}
-          {"İBRAHİM ERGEN"}
+          {"ALPEREN EFİLOĞLU"}
+          {/* {"İBRAHİM ERGEN"} */}
         </span>
         <div className="relative h-14 lg:h-20 w-fit mt-4">
           <div className="NewHeroTitle text-4xl lg:text-6xl font-extrabold text-white flex flex-col absolute w-fit items-start">
             <p className="absolute top-0 left-0">
               <span className="word wisteria flex flex-row inverse-hover">
-                {/* FRONT-END DEVELOPER */}
-                FULL-STACK DEVELOPER
+                FRONT-END DEVELOPER
+                {/* FULL-STACK DEVELOPER */}
               </span>
             </p>
             <p className="absolute top-0 left-0">

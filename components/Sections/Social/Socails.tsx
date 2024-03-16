@@ -8,11 +8,12 @@ const inter = Inter({ subsets: ["latin"] });
 type Props = {};
 
 const Socials = (props: Props) => {
-  const instagram = "https://www.instagram.com/brhm_ergen/";
-  const linkedin = "https://www.linkedin.com/in/ibrahim-ergen-6a7902198/";
-  // "https://www.linkedin.com/in/muhammet-alperen-efiloğlu-31019a206/";
-  const email = "brhmrgn1@gmail.com";
-  // "muhammet.alperen.efiloglu@gmail.com";
+  const instagram = "https://www.instagram.com/m.alp.efil/";
+  const linkedin =
+    "https://www.linkedin.com/in/muhammet-alperen-efiloğlu-31019a206/";
+  // "https://www.linkedin.com/in/ibrahim-ergen-6a7902198/";
+  const email = "muhammet.alperen.efiloglu@gmail.com";
+  // "brhmrgn1@gmail.com";
 
   const handleMailClick = () => {
     window.location.href = `mailto:${email}`;

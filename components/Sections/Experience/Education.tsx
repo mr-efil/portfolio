@@ -7,19 +7,24 @@ type Props = {};
 const Education = (props: Props) => {
   const paginatedItems = [
     {
-      company: "IMKB SCIENCE HIGH SCHOOL",
+      company: "VEHBI DINCER SCIENCE HIGH SCHOOL",
       department: "",
       task: "97/100",
     },
     {
       company: "TURKEY UNIVERSITY EXAM",
-      "department": "",
+      department: "",
       task: "rank 3K/4M",
     },
     {
       company: "MIDDLE EAST TECHNICAL UNIVERSITY",
-      "department": "Mechanical Engineering",
-      task: "3.5/4",
+      department: "Mechanical Engineering",
+      task: "3.73/4",
+    },
+    {
+      company: "MIDDLE EAST TECHNICAL UNIVERSITY",
+      department: "Electrical and Electronics Engineering",
+      task: "3.51/4",
     },
   ];
   return (

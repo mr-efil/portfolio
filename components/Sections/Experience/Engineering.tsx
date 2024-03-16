@@ -7,12 +7,12 @@ type Props = {};
 const Engineering = (props: Props) => {
   const paginatedItems = [
     {
-      company: "TUSAŞ",
-      duration: "6 Months",
-      task: "Manufacturing and Assemblying",
+      company: "TEI",
+      duration: "2 Months",
+      task: "RD Department",
     },
-    { company: "ASELSAN", duration: "1 Month", task: "RD Department" },
-    { company: "TUBITAK", duration: "1 Month", task: "Mechanical Design Unit" },
+    { company: "RENO", duration: "1 Month", task: "Manufacturing and Assemblying" },
+    { company: "ROKETSAN", duration: "1 Month", task: "Mechanical Design Unit" },
     {
       company: "PROSTHETICS and ORTHOTICS",
       duration: "5 Months",
