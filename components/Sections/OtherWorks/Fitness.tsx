@@ -32,11 +32,12 @@ const Fitness = () => {
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
             <p className="font-light text-lg">
-              In this project, we've developed a website featuring a 3D model of
-              the human body to illustrate muscle groups and corresponding
-              exercises for targeted development. Additionally, tailored dietary
-              plans are provided for each specific body region. On the website,
-              there's also a game waiting for you. I hope you enjoy playing it!
+              In this project, we&apos;ve developed a website featuring a 3D
+              model of the human body to illustrate muscle groups and
+              corresponding exercises for targeted development. Additionally,
+              tailored dietary plans are provided for each specific body region.
+              On the website, there&apos;s also a game waiting for you. I hope
+              you enjoy playing it!
             </p>
           </div>
           <Labels

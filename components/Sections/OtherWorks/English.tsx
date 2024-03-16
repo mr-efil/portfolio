@@ -36,17 +36,17 @@ const English = () => {
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
             <p className="font-light text-lg">
-              In this project, we've developed a website aimed at helping
+              In this project, we&apos;ve developed a website aimed at helping
               English learners improve their skills through practice. The
               process begins with creating photos depicting various life
               scenarios using Midjourney. Subsequently, we generate dialogs
               using the OpenAI API, which are then read aloud by one of the
-              elevenlabs voices. Finally, users' voices are recorded to assess
-              the pronunciation accuracy. One advantage of the platform is that
-              users can practice speaking without fear or shyness, and they can
-              also expose themselves to different accents. Another advantage is
-              that users can prepare for real-life scenarios by practicing on
-              the platform.
+              elevenlabs voices. Finally, users&apos; voices are recorded to
+              assess the pronunciation accuracy. One advantage of the platform
+              is that users can practice speaking without fear or shyness, and
+              they can also expose themselves to different accents. Another
+              advantage is that users can prepare for real-life scenarios by
+              practicing on the platform.
             </p>
           </div>
           <Labels

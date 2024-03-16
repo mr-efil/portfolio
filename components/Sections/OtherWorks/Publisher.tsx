@@ -31,16 +31,16 @@ const Publisher = () => {
         <div className="flex flex-col items-center gap-16 p-10 rounded-xl border-white border-opacity-30">
           <div className="w-full ">
             <p className="font-light text-lg">
-              In this project, we've created a mobile app designed for managing
-              a database system. The app caters to three distinct user roles:
-              Admins, Editors, and Teachers.
+              In this project, we&apos;ve created a mobile app designed for
+              managing a database system. The app caters to three distinct user
+              roles: Admins, Editors, and Teachers.
               <br />
               Teachers are responsible for creating questions, which are then
               sent to Editors for refinement, including tasks like adding
               images, arranging fonts, etc. Once the edits are completed, the
               questions are sent back to the Teachers for approval. This
               back-and-forth process between Editors and Teachers continues
-              until both parties are satisfied with the question's quality.
+              until both parties are satisfied with the question&apos;s quality.
               <br />
               Subsequently, the approved questions are forwarded to the Admin
               for final approval. Upon receiving Admin approval, the questions

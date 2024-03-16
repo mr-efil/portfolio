@@ -50,7 +50,7 @@ const Contact = (props: Props) => {
       <div className=" relative z-10 flex flex-col items-center w-full text-center">
         <h2 className="text-2xl lg:text-4xl font-extrabold lg:leading-relaxed w-full">
           <span className="text-2xl lg:text-4xl font-extrabold uppercase">
-            Let's work together
+            Let&apos;s work together
           </span>
         </h2>
         <div className="flex flex-col w-full items-center justify-center gap-12 mt-12">
