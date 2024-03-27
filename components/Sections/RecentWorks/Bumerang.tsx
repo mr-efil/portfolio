@@ -46,7 +46,7 @@ const Bumerang = () => {
             <p className="font-light text-lg">
               Bumerang is an innovative Learning Management System that
               seamlessly integrates gamification elements. Designed to enhance
-              students' learning experience, it offers a variety of games
+              students&apos; learning experience, it offers a variety of games
               tailored to develop specific skills such as time management and
               quick decision-making. On the platform, students can engage in
               interactive quizzes covering fundamental sciences, earning points

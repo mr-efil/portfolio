@@ -20,7 +20,7 @@ const MainSection = () => {
           </p>
         </div>
         <p className="text-white text-1xl">
-          Hey there! My name is İbrahim Ergen and I'm a FullStack Developer
+          Hey there! My name is İbrahim Ergen and I&apos;m a FullStack Developer
           based in Ankara, Turkey. I have over 2 years of experience in web and
           mobile development.
         </p>
