@@ -48,7 +48,7 @@ const KursuToggleButton = ({ handlePrevPage, handleNextPage }: Props) => {
           width={20}
           height={20}
           className={
-            "rotate-90  translate-x-6 transition-transform duration-500 toggle2"
+            "rotate-90 translate-x-6 transition-transform duration-500 toggle2"
           }
           //64% previously
           onClick={handleNextPage}
