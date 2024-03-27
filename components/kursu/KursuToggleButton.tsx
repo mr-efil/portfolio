@@ -1,9 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+type Props = {
+  handlePrevPage: () => void;
+  handleNextPage: () => void;
+};
 
-const KursuToggleButton = ({ handlePrevPage, handleNextPage }) => {
+const KursuToggleButton = ({ handlePrevPage, handleNextPage }: Props) => {
   return (
     <div className="inverse-hover left-0 right-0 -bottom-14 mx-auto absolute z-50 flex justify-between items-center w-full invert">
       <div
