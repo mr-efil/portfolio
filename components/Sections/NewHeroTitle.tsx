@@ -84,7 +84,7 @@ const NewHeroTitle: React.FC = () => {
         className="text-2xl lg:text-5xl font-extrabold leading-relaxed w-full lg:w-[750px] "
         style={{ fontFamily: "Montserrat ; sans-serif" }}
       >
-        <span className="text-2xl lg:text-3xl font-extrabold text-[#787878]">
+        <span className="text-2xl lg:text-3xl font-extrabold text-[#787878] ">
           {/* {"ALPEREN EFİLOĞLU"} */}
           {"İBRAHİM ERGEN"}
         </span>
